@@ -359,3 +359,42 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
     font-size: 1.4rem;
   }
 }
+/* === ESTILOS PARA "MÁS" DESTACADO === */
+
+/* 1. Estilo Base del texto "MÁS" */
+.mas-destacado {
+  font-family: 'Permanent Marker', cursive, sans-serif; /* Fuente tipo marcador */
+  color: #ffdd00; /* Amarillo bandera (coherente con identidad) */
+  font-size: 1.3em; /* Un poco más grande que el resto */
+  display: inline-block; /* Necesario para que la animación funcione */
+  text-shadow: 2px 2px 0px #0033a0; /* Sombra dura azul para contraste pop */
+  
+  /* 2. Configuración de la Animación */
+  animation: latidoOrganico 2s infinite ease-in-out;
+  
+  /* Ajuste fino de posición */
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+/* 3. Definición de la Animación (Keyframes) */
+@keyframes latidoOrganico {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(-3deg); /* Crece un poco y se inclina */
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* 4. Ajuste Mobile (Para que no se rompa en pantallas pequeñas) */
+@media (max-width: 768px) {
+  .mas-destacado {
+    font-size: 1.2em;
+    margin-left: 3px;
+  }
+}
