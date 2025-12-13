@@ -398,3 +398,125 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
     margin-left: 3px;
   }
 }
+/* === BOTÓN GRUPO WHATSAPP === */
+.btn-whatsapp-group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: white; /* Fondo blanco para contraste en sección oscura */
+  color: #25d366; /* Verde oficial WhatsApp */
+  padding: 12px 35px;
+  text-decoration: none;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp-group img {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-whatsapp-group:hover {
+  background-color: #25d366;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-group:hover img {
+  filter: brightness(0) invert(1); /* Vuelve el icono blanco al pasar el mouse */
+}
+
+/* === SECCIÓN TESTIMONIOS === */
+.bg-gris-suave {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.testimonio-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 5px solid var(--azul-conservador); /* Línea de identidad */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonio-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonio-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  background-color: var(--azul-oscuro);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.testimonio-info h5 {
+  margin: 0;
+  color: var(--texto);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.testimonio-info .cargo {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.testimonio-text {
+  font-style: italic;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.estrellas {
+  color: #ffdd00; /* Amarillo institucional */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.testimonio-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.testimonio-footer a {
+  color: var(--azul-conservador);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.testimonio-footer a:hover {
+  text-decoration: underline;
+}
+
