@@ -301,3 +301,60 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .nav-links a { margin: 10px 0; text-align: center; }
 }
 @media (min-width: 769px) { .menu-toggle { display: none; } }
+/* === AJUSTES PEDAGOGÍA (TAREA 1, 2 y 3) === */
+
+/* TAREA 1: Logo Inline en texto */
+.logo-inline {
+  height: 1.5em; /* Se escala con el tamaño de letra del texto */
+  vertical-align: middle; /* Se alinea con el centro de la letra */
+  margin: 0 5px;
+  display: inline-block;
+  transform: translateY(-2px); /* Ajuste óptico fino */
+}
+
+.instruccion-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Evita que se rompa feo en móvil */
+  margin-bottom: 15px;
+}
+
+/* TAREA 2: Simplificación del Grid */
+.col-numeros.single-focus {
+  display: flex;
+  justify-content: center; /* Centra el 82 horizontalmente */
+  align-items: center;     /* Centra el 82 verticalmente */
+}
+
+/* Hacemos la casilla un poco más grande para darle protagonismo */
+.col-numeros.single-focus .casilla-objetivo {
+  transform: scale(1.2); 
+  box-shadow: 0 4px 10px rgba(0,51,160, 0.15);
+}
+
+/* TAREA 3: Animación Suave */
+.x-animada path {
+  fill: none;
+  stroke: var(--acento);
+  stroke-width: 8; /* Trazo más visible */
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0; /* Oculto por defecto */
+}
+
+/* Clase que activa la animación (controlada por JS) */
+.animate-now .trazo1 {
+  animation: markX 0.4s ease-out forwards;
+  opacity: 1;
+}
+
+.animate-now .trazo2 {
+  animation: markX 0.4s ease-out forwards 0.3s; /* Retraso para el segundo trazo */
+  opacity: 1;
+}
+
+@keyframes markX {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
