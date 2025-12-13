@@ -71,7 +71,6 @@ nav {
 header {
   height: 100vh;
   position: relative;
-  /* FIX: Ruta img/ y extensión .jpg (NO .jpeg) */
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-position: center top;
@@ -205,52 +204,88 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 }
 .logo-tarjeton { width: 80px; margin-bottom: 10px; }
 .nombre-partido { font-size: 0.7rem; font-weight: bold; text-align: center; color: var(--azul-conservador); }
-.col-numeros { width: 60%; padding-left: 15px; }
-.grid-numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.grid-numeros span, .casilla-objetivo {
-  border: 1px solid #999; border-radius: 5px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666; font-size: 0.9rem; position: relative;
-}
-.casilla-objetivo {
-  background-color: rgba(0, 51, 160, 0.05); border-color: var(--azul-conservador); color: var(--azul-conservador); font-weight: 800; font-size: 1.1rem;
-}
-.x-animada { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-.x-animada path {
-  fill: none; stroke: var(--acento); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100;
-}
-.trazo1 { animation: dibujar 0.6s ease-out forwards; animation-delay: 1s; }
-.trazo2 { animation: dibujar 0.6s ease-out forwards; animation-delay: 1.6s; }
-@keyframes dibujar { to { stroke-dashoffset: 0; } }
 
-.instrucciones-voto h4 { margin: 15px 0; color: var(--azul-oscuro); }
+/* Simplificación del Grid (Solo muestra casilla 82) */
+.col-numeros.single-focus {
+  width: 60%;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-numeros.single-focus .casilla-objetivo {
+  width: 80px;
+  height: 60px;
+  transform: scale(1.3); 
+  box-shadow: 0 4px 10px rgba(0,51,160, 0.15);
+  border: 2px solid var(--azul-conservador);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--azul-conservador);
+  font-size: 1.2rem;
+  position: relative;
+  background-color: rgba(0, 51, 160, 0.05);
+}
+
+/* ESTILOS DE LA ANIMACIÓN */
+.x-animada { 
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; 
+}
+.x-animada path {
+  fill: none;
+  stroke: var(--acento);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100; /* Oculto inicialmente */
+}
+
+/* Clase que activa el loop infinito controlada por JS */
+.active-animation .trazo1 {
+  animation: drawLine 2s infinite;
+}
+.active-animation .trazo2 {
+  animation: drawLine 2s infinite;
+  animation-delay: 0.3s; /* Pequeño retraso para que parezca una X real */
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 100; } /* Invisible */
+  30% { stroke-dashoffset: 0; }   /* Dibujado */
+  80% { stroke-dashoffset: 0; }   /* Mantiene dibujado */
+  100% { stroke-dashoffset: 0; opacity: 0; } /* Desvanece al final */
+}
+
+/* LOGO INLINE EN TEXTO */
+.logo-inline {
+  height: 1.4em;
+  vertical-align: middle;
+  margin: 0 4px;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.instruccion-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.instrucciones-voto h4 { margin: 0; color: var(--azul-oscuro); }
 .step-num {
-  background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem;
+  background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem; flex-shrink: 0;
 }
 .nota-legal { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 20px; }
 
 /* === TRAYECTORIA Y MENSAJE === */
-.bio-content {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-}
-.bio-content ul {
-  text-align: left;
-  display: inline-block;
-  margin-top: 20px;
-}
+.bio-content { text-align: center; max-width: 800px; margin: auto; }
+.bio-content ul { text-align: left; display: inline-block; margin-top: 20px; }
 .bg-light { background-color: var(--gris-claro); }
-.mensaje-box {
-  text-align: center;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: auto;
-}
-.mensaje-box cite {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: var(--azul-conservador);
-}
+.mensaje-box { text-align: center; font-size: 1.2rem; max-width: 800px; margin: auto; }
+.mensaje-box cite { display: block; margin-top: 15px; font-weight: bold; color: var(--azul-conservador); }
 
 /* === FOOTER Y WHATSAPP === */
 .bg-dark { background: var(--azul-oscuro); color: white; text-align: center; }
@@ -260,31 +295,14 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-/* FIX: ESTILOS WHATSAPP */
 .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
+  position: fixed; bottom: 20px; right: 20px;
+  background-color: #25d366; width: 60px; height: 60px; border-radius: 50%;
+  text-align: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 2000;
+  display: flex; align-items: center; justify-content: center; transition: transform 0.3s;
 }
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #1ebc57;
-}
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
+.whatsapp-float:hover { transform: scale(1.1); background-color: #1ebc57; }
+.whatsapp-float img { width: 35px; height: 35px; }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -301,60 +319,3 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .nav-links a { margin: 10px 0; text-align: center; }
 }
 @media (min-width: 769px) { .menu-toggle { display: none; } }
-/* === AJUSTES PEDAGOGÍA (TAREA 1, 2 y 3) === */
-
-/* TAREA 1: Logo Inline en texto */
-.logo-inline {
-  height: 1.5em; /* Se escala con el tamaño de letra del texto */
-  vertical-align: middle; /* Se alinea con el centro de la letra */
-  margin: 0 5px;
-  display: inline-block;
-  transform: translateY(-2px); /* Ajuste óptico fino */
-}
-
-.instruccion-item {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap; /* Evita que se rompa feo en móvil */
-  margin-bottom: 15px;
-}
-
-/* TAREA 2: Simplificación del Grid */
-.col-numeros.single-focus {
-  display: flex;
-  justify-content: center; /* Centra el 82 horizontalmente */
-  align-items: center;     /* Centra el 82 verticalmente */
-}
-
-/* Hacemos la casilla un poco más grande para darle protagonismo */
-.col-numeros.single-focus .casilla-objetivo {
-  transform: scale(1.2); 
-  box-shadow: 0 4px 10px rgba(0,51,160, 0.15);
-}
-
-/* TAREA 3: Animación Suave */
-.x-animada path {
-  fill: none;
-  stroke: var(--acento);
-  stroke-width: 8; /* Trazo más visible */
-  stroke-linecap: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  opacity: 0; /* Oculto por defecto */
-}
-
-/* Clase que activa la animación (controlada por JS) */
-.animate-now .trazo1 {
-  animation: markX 0.4s ease-out forwards;
-  opacity: 1;
-}
-
-.animate-now .trazo2 {
-  animation: markX 0.4s ease-out forwards 0.3s; /* Retraso para el segundo trazo */
-  opacity: 1;
-}
-
-@keyframes markX {
-  from { stroke-dashoffset: 100; }
-  to { stroke-dashoffset: 0; }
-}

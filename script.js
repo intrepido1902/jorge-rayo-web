@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // 1. Lógica del Menú Móvil (Se mantiene igual)
+  // 1. Lógica del Menú Móvil
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -11,47 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Lógica de Animación del Voto (IntersectionObserver)
+  // 2. Lógica de Animación del Voto (IntersectionObserver Optimizado)
+  // En lugar de JS intervals, usamos JS para prender/apagar la clase CSS que tiene el loop.
   const casilla = document.getElementById('casilla-82');
-  let animationInterval;
-
-  const startAnimationLoop = () => {
-    // Ejecutar inmediatamente
-    triggerAnimation();
-    // Y luego repetir cada 2.5 segundos
-    animationInterval = setInterval(triggerAnimation, 2500);
-  };
-
-  const stopAnimationLoop = () => {
-    clearInterval(animationInterval);
-    // Limpiar clase para dejarlo limpio si se va
-    if(casilla) casilla.classList.remove('animate-now');
-  };
-
-  const triggerAnimation = () => {
-    if (!casilla) return;
-    
-    // Resetear la animación quitando la clase y forzando reflow
-    casilla.classList.remove('animate-now');
-    void casilla.offsetWidth; // Hack para reiniciar animación CSS
-    
-    // Activar animación
-    casilla.classList.add('animate-now');
-  };
-
-  // Observador: Solo anima si el elemento es visible en pantalla
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startAnimationLoop();
-      } else {
-        stopAnimationLoop();
-      }
-    });
-  }, { threshold: 0.5 }); // Se activa cuando el 50% de la sección es visible
-
   const sectionVoto = document.getElementById('como-votar');
-  if (sectionVoto) {
+
+  if (casilla && sectionVoto) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Si es visible, agregar clase que inicia la animación CSS infinita
+          casilla.classList.add('active-animation');
+        } else {
+          // Si no es visible, quitar clase para ahorrar recursos
+          casilla.classList.remove('active-animation');
+        }
+      });
+    }, { threshold: 0.4 }); // Se activa cuando el 40% de la sección es visible
+
     observer.observe(sectionVoto);
   }
 });
