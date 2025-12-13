@@ -71,8 +71,8 @@ nav {
 header {
   height: 100vh;
   position: relative;
-  /* Ruta raíz y extensión .jpeg */
-  background-image: url('hero-bg.jpeg');
+  /* FIX: Ruta img/ y extensión .jpg */
+  background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -146,7 +146,7 @@ header {
 
 .btn-primary:hover { transform: scale(1.05); }
 
-/* === JINGLE BAR (Recuperado) === */
+/* === JINGLE BAR === */
 .jingle-bar {
   background: var(--gris-claro);
   border-left: 8px solid var(--azul-conservador);
@@ -227,7 +227,7 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 }
 .nota-legal { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 20px; }
 
-/* === TRAYECTORIA Y MENSAJE (Recuperado) === */
+/* === TRAYECTORIA Y MENSAJE === */
 .bio-content {
   text-align: center;
   max-width: 800px;
@@ -252,13 +252,39 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
   color: var(--azul-conservador);
 }
 
-/* === FOOTER === */
+/* === FOOTER Y WHATSAPP === */
 .bg-dark { background: var(--azul-oscuro); color: white; text-align: center; }
 .bg-dark h3 { color: white; }
 .texto-contacto { margin-bottom: 20px; }
 .btn-outline { border: 2px solid white; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
+
+/* FIX: ESTILOS WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebc57;
+}
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
