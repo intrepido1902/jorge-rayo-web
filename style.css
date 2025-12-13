@@ -1,0 +1,65 @@
+/* === ESTILOS GENERALES === */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+/* === HEADER === */
+header {
+  background: linear-gradient(135deg, #0033a0, #00246b);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+/* === NÚMERO TARJETÓN === */
+.numero {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  background: white;
+  color: #0033a0;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* === SECCIONES === */
+section {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h3 {
+  color: #0033a0;
+  margin-bottom: 15px;
+}
+
+/* === JINGLE === */
+.jingle {
+  font-style: italic;
+  background: #e6ebf5;
+  padding: 20px;
+  border-left: 5px solid #0033a0;
+}
+
+/* === FOOTER === */
+footer {
+  background: #00246b;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
