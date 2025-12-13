@@ -71,7 +71,7 @@ nav {
 header {
   height: 100vh;
   position: relative;
-  /* FIX: Ruta img/ y extensión .jpg */
+  /* FIX: Ruta img/ y extensión .jpg (NO .jpeg) */
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-position: center top;
