@@ -1,74 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jorge Rayo - Senado 2026</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jorge Rayo #82 | Senado 2026–2030</title>
+
+  <!-- ESTILOS EMBEBIDOS (UNA SOLA PÁGINA) -->
+  <style>
+    :root {
+      --azul: #0033a0;
+      --azul-oscuro: #00246b;
+      --gris: #f4f6fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+      background: var(--gris);
+      scroll-behavior: smooth;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,36,107,0.95);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    /* HERO */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,36,107,0.75), rgba(0,36,107,0.75)), url('jorge-rayo.jpg') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+    }
+
+    header h2 { font-weight: normal; }
+
+    .tarjeton {
+      margin-top: 25px;
+      background: white;
+      color: var(--azul);
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    /* SECCIONES */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 25px;
+      background: white;
+      margin-bottom: 30px;
+      border-radius: 14px;
+    }
+
+    section h3 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .jingle {
+      font-style: italic;
+      background: #eef1fb;
+      padding: 25px;
+      border-left: 6px solid var(--azul);
+      font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--azul-oscuro);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.4rem; }
+      nav { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <!-- NAVEGACIÓN -->
   <nav>
-    <strong>JORGE RAYO · #82</strong>
-    <div>
-      <a href="#presentacion">Presentación</a>
-      <a href="#propuesta">Propuesta</a>
-      <a href="#trayectoria">Trayectoria</a>
-      <a href="#mensaje">Mensaje</a>
-      <a href="#contacto">Contacto</a>
-    </div>
+    <a href="#presentacion">Presentación</a>
+    <a href="#propuesta">Propuesta</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a href="#mensaje">Mensaje</a>
+    <a href="#contacto">Contacto</a>
   </nav>
-</header>
 
-<section class="hero" id="presentacion">
-  <h1>Jorge Rayo <span>#82</span></h1>
-  <p>Candidato al Senado de la República<br>
-     Partido Conservador de Colombia · 2026–2030</p>
-  <p><em>
-    “Por los que madrugan, por los que trasnochan,<br>
-    por los que nos cuidan”
-  </em></p>
-</section>
+  <!-- HERO -->
+  <header id="presentacion">
+    <div>
+      <h1>Jorge Rayo</h1>
+      <h2>Candidato al Senado de la República</h2>
+      <p>Partido Conservador Colombiano · 2026–2030</p>
+      <div class="tarjeton">Tarjetón #82</div>
+    </div>
+  </header>
 
-<section id="propuesta">
-  <h2>🇨🇴 Propuesta</h2>
-  <p>
-    Una Colombia que valore el trabajo honesto, la familia,
-    la seguridad y el esfuerzo diario de quienes sacan
-    este país adelante.
-  </p>
-</section>
+  <!-- PROPUESTA -->
+  <section id="propuesta">
+    <h3>🇨🇴 Propuesta</h3>
+    <p>Una Colombia que valore el trabajo honesto, la familia, la seguridad y el esfuerzo diario de quienes sacan este país adelante.</p>
+  </section>
 
-<section id="trayectoria">
-  <h2>📜 Hoja de vida y trayectoria</h2>
-  <p>
-    Jorge Rayo cuenta con una trayectoria basada en el servicio,
-    el compromiso social y los valores del conservatismo colombiano.
-  </p>
-</section>
+  <!-- JINGLE -->
+  <section class="jingle">
+    “Por los que madrugan, por los que trasnochan, por los que nos cuidan”
+  </section>
 
-<section id="mensaje">
-  <h2>📣 Mensaje político</h2>
-  <p>
-    Este proyecto político nace para representar a quienes
-    madrugan a trabajar, a quienes trasnochan por sus familias
-    y a quienes cuidan de Colombia todos los días.
-  </p>
-</section>
+  <!-- TRAYECTORIA -->
+  <section id="trayectoria">
+    <h3>📜 Hoja de vida y trayectoria</h3>
+    <p>Jorge Rayo cuenta con una trayectoria basada en el servicio, el compromiso social y los valores del conservatismo colombiano.</p>
+  </section>
 
-<section id="contacto">
-  <h2>📞 Contacto y redes</h2>
-  <p>
-    Próximamente redes sociales oficiales y canales de contacto.
-  </p>
-</section>
+  <!-- MENSAJE -->
+  <section id="mensaje">
+    <h3>📣 Mensaje político</h3>
+    <p>Este proyecto político nace para representar a quienes madrugan a trabajar, a quienes trasnochan por sus familias y a quienes cuidan de Colombia todos los días.</p>
+  </section>
 
-<footer>
-  <p>Jorge Rayo · Senado 2026–2030 · Partido Conservador</p>
-</footer>
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h3>📞 Contacto y redes</h3>
+    <p>Próximamente redes sociales oficiales y canales de contacto.</p>
+  </section>
+
+  <footer>
+    © 2026 · Jorge Rayo · Senado · Partido Conservador Colombiano
+  </footer>
 
 </body>
 </html>
