@@ -340,3 +340,22 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 }
 
 /* Nota: Si tenías estilos para .nombre-partido, ya no se usan y puedes borrarlos o ignorarlos */
+
+/* === ESTILO NUEVA FRASE (TAREA 2) === */
+.pre-eslogan {
+  font-family: 'Montserrat', sans-serif; /* Misma fuente de títulos */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 5px; /* Espacio pequeño antes del eslogan principal */
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para lectura perfecta */
+}
+
+/* Ajuste Mobile para la nueva frase */
+@media (max-width: 768px) {
+  .pre-eslogan {
+    font-size: 1.4rem;
+  }
+}
