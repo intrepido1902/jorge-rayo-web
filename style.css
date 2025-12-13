@@ -1,28 +1,25 @@
-/* === VARIABLES Y RESET === */
+/* === VARIABLES Y BASE === */
 :root {
   --azul-conservador: #0033a0;
-  --azul-oscuro: #00246b;
+  --azul-oscuro: #001a4d;
   --blanco: #ffffff;
   --gris-claro: #f4f6fb;
-  --texto: #222222;
-  --acento: #c8102e; /* Rojo sutil para detalles */
+  --texto: #222;
+  --acento: #c8102e;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: var(--texto);
-  background-color: var(--blanco);
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, .tarjeton, .nav-logo {
+h1, h2, h3, h4, .nav-text, .numero-gigante {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* === NAVEGACIÓN === */
@@ -30,14 +27,14 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 36, 107, 0.95);
-  padding: 15px 0;
+  background: rgba(0, 26, 77, 0.95);
+  padding: 10px 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .nav-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -45,129 +42,111 @@ nav {
   padding: 0 20px;
 }
 
-.nav-logo {
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: white;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: auto;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
   margin-left: 20px;
-  transition: color 0.3s;
+  font-weight: 600;
 }
 
-.nav-links a:hover {
-  color: #ddd;
+.highlight-link {
+  background: var(--acento);
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
-/* === HERO SECTION === */
+/* === HERO HEADER === */
 header {
   height: 100vh;
-  /* Asegúrate de tener la imagen jorge-rayo.jpg */
-  background: linear-gradient(rgba(0, 51, 160, 0.7), rgba(0, 36, 107, 0.8)), url('jorge-rayo.jpg') center/cover no-repeat;
-  color: white;
+  position: relative;
+  /* Ruta raíz y extensión .jpeg */
+  background-image: url('hero-bg.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin-top: 0;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin: 0;
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0, 51, 160, 0.85) 40%, rgba(0, 51, 160, 0.1));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
 }
 
-.hero-content h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 5px;
+.hero-content {
+  max-width: 600px;
+  color: white;
+  text-align: left;
 }
 
-.partido {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 25px;
+.header-badges {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.tarjeton {
-  background: white;
-  color: var(--azul-conservador);
-  padding: 15px 40px;
-  border-radius: 50px;
-  font-size: 1.8rem;
-  font-weight: 800;
+.hero-logo {
+  height: 80px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.numero-gigante {
+  font-size: 5rem;
+  line-height: 1;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.eslogan-principal {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.resaltado { color: #ffdd00; }
+
+.cargo-badge {
   display: inline-block;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
   margin-bottom: 30px;
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
-/* === BOTONES === */
 .btn-primary {
   background-color: var(--acento);
   color: white;
-  padding: 12px 30px;
+  padding: 15px 35px;
   text-decoration: none;
-  border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s;
+  border-radius: 50px;
   display: inline-block;
+  transition: transform 0.2s;
 }
 
-.btn-primary:hover {
-  background-color: #a00c24;
-}
+.btn-primary:hover { transform: scale(1.05); }
 
-.btn-outline {
-  border: 2px solid white;
-  color: white;
-  padding: 10px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: var(--azul-oscuro);
-}
-
-/* === SECCIONES GENERALES === */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-section h3 {
-  color: var(--azul-conservador);
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.bg-light { background-color: var(--gris-claro); }
-.bg-dark { 
-  background-color: var(--azul-oscuro); 
-  color: white;
-  text-align: center;
-}
-.bg-dark h3 { color: white; }
-
-/* === JINGLE BAR === */
+/* === JINGLE BAR (Recuperado) === */
 .jingle-bar {
   background: var(--gris-claro);
   border-left: 8px solid var(--azul-conservador);
@@ -179,242 +158,120 @@ section h3 {
   color: var(--azul-oscuro);
 }
 
-/* === GRID CARDS (Propuestas) === */
+/* === SECCIONES COMUNES === */
+section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h3 { color: var(--azul-conservador); font-size: 2rem; }
+
+/* Propuestas */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
-
 .card {
-  background: white;
+  background: #f9f9f9;
   padding: 30px;
-  border-radius: 10px;
+  border-top: 5px solid var(--azul-conservador);
+  border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  border-top: 4px solid var(--azul-conservador);
-  text-align: center;
-  transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h4 {
-  color: var(--azul-oscuro);
-  font-size: 1.3rem;
-  margin-top: 0;
-}
-
-/* === SIMULACRO TARJETÓN === */
-.simulacro-container {
+/* === PEDAGOGÍA ELECTORAL === */
+.bg-voto { background-color: #eef2f9; }
+.simulador-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
   align-items: center;
-  margin-top: 30px;
+  gap: 50px;
 }
-
 .tarjeton-demo {
   background: white;
   border: 2px solid #ccc;
+  width: 100%;
+  max-width: 450px;
   border-radius: 10px;
-  padding: 15px;
-  display: flex;
-  max-width: 400px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
   position: relative;
 }
+.tarjeton-header {
+  background: #ddd; color: #333; text-align: center; font-size: 0.7rem; font-weight: bold; padding: 5px; letter-spacing: 1px;
+}
+.tarjeton-body { display: flex; padding: 15px; }
+.col-logo {
+  width: 40%; border-right: 2px solid #aaa; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 15px;
+}
+.logo-tarjeton { width: 80px; margin-bottom: 10px; }
+.nombre-partido { font-size: 0.7rem; font-weight: bold; text-align: center; color: var(--azul-conservador); }
+.col-numeros { width: 60%; padding-left: 15px; }
+.grid-numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.grid-numeros span, .casilla-objetivo {
+  border: 1px solid #999; border-radius: 5px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666; font-size: 0.9rem; position: relative;
+}
+.casilla-objetivo {
+  background-color: rgba(0, 51, 160, 0.05); border-color: var(--azul-conservador); color: var(--azul-conservador); font-weight: 800; font-size: 1.1rem;
+}
+.x-animada { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.x-animada path {
+  fill: none; stroke: var(--acento); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100;
+}
+.trazo1 { animation: dibujar 0.6s ease-out forwards; animation-delay: 1s; }
+.trazo2 { animation: dibujar 0.6s ease-out forwards; animation-delay: 1.6s; }
+@keyframes dibujar { to { stroke-dashoffset: 0; } }
 
-.columna-partido {
-  width: 35%;
-  border-right: 2px solid #ccc;
+.instrucciones-voto h4 { margin: 15px 0; color: var(--azul-oscuro); }
+.step-num {
+  background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem;
+}
+.nota-legal { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 20px; }
+
+/* === TRAYECTORIA Y MENSAJE (Recuperado) === */
+.bio-content {
   text-align: center;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 800px;
+  margin: auto;
 }
-
-.logo-c {
-  background: var(--azul-conservador);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.8rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
-}
-
-.nombre-partido {
-  font-size: 0.6rem;
-  font-weight: bold;
-  color: var(--azul-conservador);
-}
-
-.columna-numeros {
-  width: 65%;
-  padding-left: 10px;
-}
-
-.grid-numeros {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-}
-
-.grid-numeros span {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-align: center;
-  font-weight: bold;
-  color: #666;
-  padding: 5px 0;
-  position: relative;
-  font-size: 0.9rem;
-}
-
-.grid-numeros span.marcado {
-  color: var(--azul-conservador);
-  border-color: var(--azul-conservador);
-  background: rgba(0, 51, 160, 0.05);
-  font-weight: 800;
-}
-
-.x-marca {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--acento);
-  font-size: 2rem;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  opacity: 0.9;
-  animation: marcarVoto 1s ease-in-out infinite alternate;
-}
-
-.instruccion-voto ol {
+.bio-content ul {
   text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  display: inline-block;
+  margin-top: 20px;
 }
-
-.instruccion-voto li { margin-bottom: 10px; }
-
-@keyframes marcarVoto {
-  from { transform: translate(-50%, -50%) scale(1); }
-  to { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-/* === MENSAJE Y OTROS === */
+.bg-light { background-color: var(--gris-claro); }
 .mensaje-box {
   text-align: center;
   font-size: 1.2rem;
   max-width: 800px;
   margin: auto;
 }
-
-.bio-content ul {
-  text-align: left;
-  max-width: 600px;
-  margin: 20px auto;
-  font-size: 1.1rem;
+.mensaje-box cite {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--azul-conservador);
 }
 
 /* === FOOTER === */
-footer {
-  background: #001a4d;
-  color: rgba(255,255,255,0.7);
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
-}
+.bg-dark { background: var(--azul-oscuro); color: white; text-align: center; }
+.bg-dark h3 { color: white; }
+.texto-contacto { margin-bottom: 20px; }
+.btn-outline { border: 2px solid white; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
+.footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-/* === WHATSAPP FLOTANTE === */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #1ebc57;
-}
-
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
-
-/* === RESPONSIVE Y MENÚ MÓVIL === */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.5rem; }
+  header { background-position: center center; }
+  .hero-overlay { background: linear-gradient(to bottom, rgba(0, 51, 160, 0.4), rgba(0, 51, 160, 0.9)); align-items: flex-end; padding-bottom: 50px; }
+  .hero-content { text-align: center; width: 100%; }
+  .header-badges { justify-content: center; }
+  .numero-gigante { font-size: 4rem; }
+  .eslogan-principal { font-size: 1.8rem; }
   
-  /* Botón Hamburguesa */
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  /* Menú desplegable */
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 36, 107, 0.98);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 20px;
-    display: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .nav-links.active {
-    display: flex;
-    animation: slideDown 0.3s ease forwards;
-  }
-
-  .nav-links a {
-    margin: 0;
-    font-size: 1.2rem;
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
+  .menu-toggle { display: block; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--azul-conservador); flex-direction: column; padding: 20px; }
+  .nav-links.active { display: flex; }
+  .nav-links a { margin: 10px 0; text-align: center; }
 }
-
-@media (min-width: 769px) {
-  .menu-toggle { display: none; }
-  .nav-links { display: flex !important; }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+@media (min-width: 769px) { .menu-toggle { display: none; } }

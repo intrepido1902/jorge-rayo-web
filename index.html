@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jorge Rayo, Candidato al Senado 2026-2030. Partido Conservador #82. Por los que madrugan y trabajan por Colombia.">
-  <meta name="author" content="Campaña Jorge Rayo">
-  
-  <meta property="og:title" content="Jorge Rayo | Senado #82">
-  <meta property="og:description" content="Una Colombia que valora el trabajo honesto. Partido Conservador #82.">
-  <meta property="og:image" content="jorge-rayo.jpg">
-  <meta property="og:type" content="website">
-
-  <title>Jorge Rayo #82 | Senado 2026–2030</title>
+  <meta name="description" content="Jorge Rayo, Candidato al Senado 2026. Partido Conservador #82.">
+  <title>Jorge Rayo #82 | Senado de la República</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,92 +16,109 @@
 
   <nav>
     <div class="nav-container">
-      <span class="nav-logo">JORGE RAYO <strong>#82</strong></span>
+      <div class="nav-brand">
+        <img src="logo-partido.jpeg" alt="Partido Conservador" class="nav-logo-img">
+        <span class="nav-text">JORGE RAYO <strong>#82</strong></span>
+      </div>
       
-      <button class="menu-toggle" aria-label="Abrir menú">
-        ☰
-      </button>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
 
-      <div class="nav-links" id="nav-links">
-        <a href="#presentacion" class="nav-item">Inicio</a>
-        <a href="#propuesta" class="nav-item">Propuestas</a>
-        <a href="#como-votar" class="nav-item">Cómo Votar</a>
-        <a href="#trayectoria" class="nav-item">Trayectoria</a>
-        <a href="#mensaje" class="nav-item">Mensaje</a>
-        <a href="#contacto" class="nav-item">Contacto</a>
+      <div class="nav-links">
+        <a href="#presentacion">Inicio</a>
+        <a href="#propuesta">Propuestas</a>
+        <a href="#como-votar" class="highlight-link">Cómo Votar</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
   </nav>
 
   <header id="presentacion">
-    <div class="hero-content">
-      <h1>JORGE RAYO</h1>
-      <h2>Senado de la República 2026</h2>
-      <p class="partido">Partido Conservador Colombiano</p>
-      
-      <div class="tarjeton-wrapper">
-        <div class="tarjeton">MARQUE C #82</div>
-      </div>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <div class="header-badges">
+          <img src="logo-partido.jpeg" alt="Partido Conservador" class="hero-logo">
+          <div class="numero-gigante">#82</div>
+        </div>
 
-      <div class="hero-cta">
-        <a href="#propuesta" class="btn-primary">Conoce mi propuesta</a>
+        <h1 class="eslogan-principal">
+          Por los que <span class="resaltado">madrugan</span>,<br>
+          por los que <span class="resaltado">trasnochan</span>,<br>
+          por los que nos <span class="resaltado">cuidan</span>.
+        </h1>
+
+        <div class="cargo-badge">Senado 2026 - 2030</div>
+        
+        <a href="#propuesta" class="btn-primary">Conoce mis propuestas</a>
       </div>
     </div>
   </header>
 
   <div class="jingle-bar">
-    <p>“Por los que madrugan, por los que trasnochan, por los que nos cuidan”</p>
+    <p>“Seguridad, Confianza y Trabajo por Colombia”</p>
   </div>
 
   <section id="propuesta">
     <div class="section-header">
       <h3>🇨🇴 Mis Banderas</h3>
-      <p>Nuestra gestión se enfocará en tres pilares fundamentales para proteger a la familia colombiana.</p>
+      <p>Tres pilares fundamentales para proteger a la familia colombiana.</p>
     </div>
-    
     <div class="grid-3">
       <article class="card">
         <h4>Trabajo Honesto</h4>
-        <p>Incentivos reales para la pequeña empresa y protección al trabajador independiente.</p>
+        <p>Incentivos reales para la pequeña empresa y el emprendedor.</p>
       </article>
       <article class="card">
         <h4>Seguridad</h4>
-        <p>Fortalecimiento de la fuerza pública y reforma a la justicia para acabar con la impunidad.</p>
+        <p>Apoyo total a la fuerza pública y reforma a la justicia.</p>
       </article>
       <article class="card">
         <h4>Familia</h4>
-        <p>Defensa de los valores tradicionales y apoyo económico a madres cabeza de hogar.</p>
+        <p>Defensa de los valores y apoyo a madres cabeza de hogar.</p>
       </article>
     </div>
   </section>
 
-  <section id="como-votar" class="bg-light">
+  <section id="como-votar" class="bg-voto">
     <div class="section-header">
-      <h3>🗳️ Así se marca el cambio</h3>
-      <p>El día de las elecciones, busca el logo de la <strong>C</strong> y el número <strong>82</strong> en el tarjetón de Senado.</p>
+      <h3>🗳️ Pedagogía Electoral</h3>
+      <p>Para que tu voto sea válido, marca así en el tarjetón de <strong>Senado</strong>:</p>
     </div>
 
-    <div class="simulacro-container">
+    <div class="simulador-wrapper">
       <div class="tarjeton-demo">
-        <div class="columna-partido">
-          <div class="logo-c">C</div>
-          <span class="nombre-partido">PARTIDO<br>CONSERVADOR</span>
-        </div>
-        <div class="columna-numeros">
-          <div class="grid-numeros">
-            <span>80</span><span>81</span>
-            <span class="marcado">82<div class="x-marca">X</div></span>
-            <span>83</span><span>84</span><span>85</span>
+        <div class="tarjeton-header">CIRCUNSCRIPCIÓN NACIONAL SENADO</div>
+        
+        <div class="tarjeton-body">
+          <div class="col-logo">
+            <img src="logo-partido.jpeg" alt="Partido Conservador" class="logo-tarjeton">
+            <span class="nombre-partido">PARTIDO<br>CONSERVADOR</span>
+          </div>
+
+          <div class="col-numeros">
+            <div class="grid-numeros">
+              <span>80</span>
+              <span>81</span>
+              <div class="casilla-objetivo" id="casilla-82">
+                82
+                <svg class="x-animada" viewBox="0 0 100 100">
+                  <path class="trazo1" d="M 20 20 L 80 80" />
+                  <path class="trazo2" d="M 80 20 L 20 80" />
+                </svg>
+              </div>
+              <span>83</span>
+              <span>84</span>
+              <span>85</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="instruccion-voto">
-        <h4>¡No te confundas!</h4>
-        <ol>
-          <li>Pide el tarjetón de <strong>SENADO</strong>.</li>
-          <li>Busca el logo del Partido Conservador.</li>
-          <li>Marca con una X el número <strong>82</strong>.</li>
-        </ol>
+
+      <div class="instrucciones-voto">
+        <h4><span class="step-num">1</span> Busca el Logo de la C</h4>
+        <h4><span class="step-num">2</span> Ubica el número 82</h4>
+        <h4><span class="step-num">3</span> Marca una X sin salirte</h4>
+        <p class="nota-legal">* Si te sales del cuadro, el voto podría anularse.</p>
       </div>
     </div>
   </section>
@@ -138,17 +147,16 @@
 
   <section id="contacto" class="bg-dark">
     <h3>Únete al equipo</h3>
-    <p>La campaña está creciendo. Escríbenos para ser voluntario o testigo electoral.</p>
-    <a href="mailto:contacto@jorgerayo.com" class="btn-outline">Escribir al equipo</a>
+    <p class="texto-contacto">La campaña está creciendo. Escríbenos para ser voluntario o testigo electoral.</p>
+    <a href="#" class="btn-outline">Voluntariado WhatsApp</a>
   </section>
 
-  <a href="https://wa.me/3176985235?text=Hola%20Jorge,%20quiero%20conocer%20tus%20propuestas" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
   <footer>
-    <p>© 2026 · Jorge Rayo · Senado de la República</p>
-    <p class="legal">Publicidad Política Pagada · Partido Conservador</p>
+    <div class="footer-logo">
+      <img src="logo-partido.jpeg" alt="Partido Conservador" style="width: 40px;">
+      <span>JORGE RAYO <strong>#82</strong></span>
+    </div>
+    <p>© 2026 Publicidad Política Pagada</p>
   </footer>
 
   <script src="script.js"></script>
