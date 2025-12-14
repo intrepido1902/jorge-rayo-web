@@ -67,7 +67,7 @@ nav {
   border-radius: 20px;
 }
 
-/* === HERO HEADER (CORREGIDO: CERO TARJETAS) === */
+/* === HERO HEADER (AJUSTE FINAL: BLANCO Y POSICIÓN) === */
 header {
   height: 100vh;
   min-height: 600px;
@@ -75,41 +75,42 @@ header {
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  /* MÓVIL (Default): Cara arriba, espacio abajo para texto */
+  /* MÓVIL: Cara arriba, texto abajo */
   background-position: center top; 
   background-color: transparent;
   display: flex;
-  align-items: flex-end; /* Alineamos texto abajo en móvil */
+  align-items: flex-end; 
 }
 
 .hero-overlay {
-  /* ELIMINADO: Fondos, gradientes y tarjetas */
+  /* SIN OVERLAYS: Fondo limpio */
   background: none !important;
   width: 100%;
   height: 100%;
   display: flex;
-  /* MÓVIL: Texto abajo */
   align-items: flex-end; 
-  /* Padding inferior grande para subir el texto y no tapar manos/cuerpo bajo */
-  padding: 0 5% 100px 5%; 
+  /* AJUSTE POSICIÓN MÓVIL: 40px para bajar el texto y liberar el rostro */
+  padding: 0 5% 40px 5%; 
 }
 
 .hero-content {
   width: 100%;
   max-width: 700px;
-  /* ELIMINADO: Background, border, backdrop-filter (La tarjeta sólida) */
+  /* SIN TARJETAS */
   background: none;
   border: none;
   backdrop-filter: none;
-  text-align: center; /* Móvil centrado */
+  text-align: center;
   margin: 0 auto;
   padding: 0;
+  /* AJUSTE COLOR: Texto blanco obligatorio */
+  color: #ffffff; 
 }
 
 .header-badges {
   display: flex;
   align-items: center;
-  justify-content: center; /* Móvil centrado */
+  justify-content: center;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -122,7 +123,8 @@ header {
 .numero-gigante {
   font-size: 5rem;
   line-height: 1;
-  /* LEGIBILIDAD PURA: Sombra fuerte */
+  /* AJUSTE COLOR Y SOMBRA */
+  color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
 
@@ -153,6 +155,8 @@ header {
   font-size: 2.2rem;
   line-height: 1.2;
   margin-bottom: 0;
+  /* AJUSTE COLOR Y SOMBRA */
+  color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
 
@@ -163,7 +167,6 @@ header {
 
 .cargo-badge {
   display: inline-block;
-  /* Fondo mínimo solo para el badge, casi transparente */
   background: rgba(255,255,255,0.15);
   padding: 5px 15px;
   border-radius: 4px;
@@ -174,6 +177,7 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
   text-shadow: 0 2px 4px rgba(0,0,0,0.9);
   margin-top: 15px;
+  color: #ffffff;
 }
 
 @keyframes latidoOrganico {
@@ -357,36 +361,36 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-/* === MEDIA QUERIES: DESKTOP & LARGE SCREENS === */
+/* === MEDIA QUERIES (DESKTOP) === */
 @media (min-width: 1024px) {
   header {
-    /* DESKTOP: Imagen a la derecha para dejar espacio al texto a la izquierda */
-    background-position: right center; 
-    align-items: center; /* Centrado vertical en escritorio */
+    background-position: right center; /* Cara a la derecha */
+    align-items: center;
   }
   
   .hero-overlay {
-    align-items: center; /* Texto centrado verticalmente */
+    align-items: center;
     justify-content: flex-start; /* Texto a la izquierda */
     padding-bottom: 0;
   }
 
   .hero-content {
-    text-align: left; /* Alineación izquierda */
+    text-align: left;
     max-width: 600px;
     margin: 0;
+    /* AJUSTE DESKTOP: Bajar un poco para equilibrio */
+    margin-top: 50px; 
   }
 
   .header-badges {
-    justify-content: flex-start; /* Alineado a la izquierda */
+    justify-content: flex-start;
   }
 
-  /* El menú hamburguesa se oculta, se muestra el nav normal */
   .menu-toggle { display: none; }
   .nav-links { display: flex !important; }
 }
 
-/* === MEDIA QUERIES: TABLET & MOBILE === */
+/* === MEDIA QUERIES (MÓVIL) === */
 @media (max-width: 1023px) {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--azul-conservador); flex-direction: column; padding: 20px;
