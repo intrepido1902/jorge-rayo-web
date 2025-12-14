@@ -132,18 +132,35 @@ header {
   border: 1px solid rgba(255,255,255,0.5);
 }
 
-.btn-primary {
-  background-color: var(--acento);
-  color: white;
-  padding: 15px 35px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
-  display: inline-block;
-  transition: transform 0.2s;
+/* === ESTILO NUEVA FRASE & MÁS === */
+.pre-eslogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.btn-primary:hover { transform: scale(1.05); }
+.mas-destacado {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  color: #ffdd00;
+  font-size: 1.3em;
+  display: inline-block;
+  text-shadow: 2px 2px 0px #0033a0;
+  animation: latidoOrganico 2s infinite ease-in-out;
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+@keyframes latidoOrganico {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
 
 /* === JINGLE BAR === */
 .jingle-bar {
@@ -162,7 +179,7 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .section-header { text-align: center; margin-bottom: 50px; }
 .section-header h3 { color: var(--azul-conservador); font-size: 2rem; }
 
-/* Propuestas */
+/* Grid Cards (Propuestas) */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -174,6 +191,44 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
   border-top: 5px solid var(--azul-conservador);
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Botón Leer Más */
+.btn-leer-mas {
+  background: none;
+  border: 2px solid var(--azul-conservador);
+  color: var(--azul-conservador);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+.btn-leer-mas:hover {
+  background: var(--azul-conservador);
+  color: white;
+}
+
+/* === ALERTA CÉDULA === */
+.alerta-cedula {
+  background-color: #ffebee;
+  color: #d32f2f;
+  text-align: center;
+  padding: 15px;
+  font-weight: 800;
+  border: 2px solid #d32f2f;
+  margin: 20px auto;
+  max-width: 90%;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  animation: pulseAlert 2s infinite;
+}
+
+@keyframes pulseAlert {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }
 
 /* === PEDAGOGÍA ELECTORAL === */
@@ -202,107 +257,98 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .col-logo {
   width: 40%; border-right: 2px solid #aaa; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 15px;
 }
-.logo-tarjeton { width: 80px; margin-bottom: 10px; }
-.nombre-partido { font-size: 0.7rem; font-weight: bold; text-align: center; color: var(--azul-conservador); }
-
-/* Simplificación del Grid (Solo muestra casilla 82) */
+.logo-tarjeton { width: 90%; max-width: 100px; height: auto; object-fit: contain; margin-bottom: 0; }
 .col-numeros.single-focus {
-  width: 60%;
-  padding-left: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 60%; padding-left: 15px; display: flex; justify-content: center; align-items: center;
 }
-
-.col-numeros.single-focus .casilla-objetivo {
-  width: 80px;
-  height: 60px;
-  transform: scale(1.3); 
+.casilla-objetivo {
+  width: 80px; height: 60px; transform: scale(1.3); 
   box-shadow: 0 4px 10px rgba(0,51,160, 0.15);
-  border: 2px solid var(--azul-conservador);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: var(--azul-conservador);
-  font-size: 1.2rem;
-  position: relative;
-  background-color: rgba(0, 51, 160, 0.05);
+  border: 2px solid var(--azul-conservador); border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; color: var(--azul-conservador); font-size: 1.2rem;
+  position: relative; background-color: rgba(0, 51, 160, 0.05);
 }
 
-/* ESTILOS DE LA ANIMACIÓN */
-.x-animada { 
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; 
-}
-.x-animada path {
-  fill: none;
-  stroke: var(--acento);
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100; /* Oculto inicialmente */
-}
-
-/* Clase que activa el loop infinito controlada por JS */
-.active-animation .trazo1 {
-  animation: drawLine 2s infinite;
-}
-.active-animation .trazo2 {
-  animation: drawLine 2s infinite;
-  animation-delay: 0.3s; /* Pequeño retraso para que parezca una X real */
-}
+/* Animación X */
+.x-animada { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.x-animada path { fill: none; stroke: var(--acento); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; }
+.active-animation .trazo1 { animation: drawLine 2s infinite; opacity: 1; }
+.active-animation .trazo2 { animation: drawLine 2s infinite; animation-delay: 0.3s; opacity: 1; }
 
 @keyframes drawLine {
-  0% { stroke-dashoffset: 100; } /* Invisible */
-  30% { stroke-dashoffset: 0; }   /* Dibujado */
-  80% { stroke-dashoffset: 0; }   /* Mantiene dibujado */
-  100% { stroke-dashoffset: 0; opacity: 0; } /* Desvanece al final */
+  0% { stroke-dashoffset: 100; }
+  30% { stroke-dashoffset: 0; }
+  80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
-/* LOGO INLINE EN TEXTO */
-.logo-inline {
-  height: 1.4em;
-  vertical-align: middle;
-  margin: 0 4px;
-  display: inline-block;
-  transform: translateY(-2px);
-}
-.instruccion-item {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-.instrucciones-voto h4 { margin: 0; color: var(--azul-oscuro); }
-.step-num {
-  background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem; flex-shrink: 0;
-}
+.logo-inline { height: 1.4em; vertical-align: middle; margin: 0 4px; display: inline-block; transform: translateY(-2px); }
+.instruccion-item { display: flex; align-items: center; flex-wrap: wrap; margin-bottom: 15px; }
+.step-num { background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem; flex-shrink: 0; }
 .nota-legal { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 20px; }
 
-/* === TRAYECTORIA Y MENSAJE === */
-.bio-content { text-align: center; max-width: 800px; margin: auto; }
-.bio-content ul { text-align: left; display: inline-block; margin-top: 20px; }
-.bg-light { background-color: var(--gris-claro); }
-.mensaje-box { text-align: center; font-size: 1.2rem; max-width: 800px; margin: auto; }
-.mensaje-box cite { display: block; margin-top: 15px; font-weight: bold; color: var(--azul-conservador); }
+/* === TRAYECTORIA === */
+.grid-2-trayectoria {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: auto;
+}
 
-/* === FOOTER Y WHATSAPP === */
+/* === MODALES === */
+.modal-overlay {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); z-index: 2000;
+}
+.modal {
+  display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: white; padding: 30px; width: 90%; max-width: 600px; border-radius: 10px;
+  z-index: 2001; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 5px solid var(--azul-conservador);
+}
+.active-modal { display: block; }
+.close-modal { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #999; }
+
+/* === HISTORIAS === */
+.bg-gris-suave { background-color: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; }
+.testimonio-card {
+  background: white; padding: 30px; border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-left: 5px solid var(--azul-conservador);
+  transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
+}
+.testimonio-card:hover { transform: translateY(-5px); }
+.testimonio-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.avatar-circle {
+  width: 50px; height: 50px; background-color: var(--azul-oscuro); color: white;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; flex-shrink: 0;
+}
+.testimonio-info h5 { margin: 0; color: var(--texto); font-size: 1.1rem; font-weight: 700; }
+.testimonio-info .cargo { font-size: 0.85rem; color: #666; font-style: italic; }
+.testimonio-text { font-style: italic; color: #444; line-height: 1.6; margin-bottom: 20px; }
+.hidden-story { display: none; }
+.active-story { display: flex; animation: fadeIn 0.5s ease-in; }
+.acciones-historias { text-align: center; margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.btn-secondary { background-color: #6c757d; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.btn-whatsapp-historia {
+  background-color: #25d366; color: white; padding: 10px 25px; border-radius: 50px;
+  text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-whatsapp-historia img { width: 20px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === CONTACTO Y FOOTER === */
 .bg-dark { background: var(--azul-oscuro); color: white; text-align: center; }
 .bg-dark h3 { color: white; }
-.texto-contacto { margin-bottom: 20px; }
-.btn-outline { border: 2px solid white; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+.btn-whatsapp-group {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  background-color: white; color: #25d366; padding: 12px 35px;
+  text-decoration: none; font-weight: 800; font-family: 'Montserrat', sans-serif;
+  border-radius: 50px; font-size: 1.1rem; transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.btn-whatsapp-group:hover { background-color: #25d366; color: white; transform: translateY(-3px); }
+.btn-whatsapp-group img { width: 28px; height: 28px; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
-
-.whatsapp-float {
-  position: fixed; bottom: 20px; right: 20px;
-  background-color: #25d366; width: 60px; height: 60px; border-radius: 50%;
-  text-align: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 2000;
-  display: flex; align-items: center; justify-content: center; transition: transform 0.3s;
-}
-.whatsapp-float:hover { transform: scale(1.1); background-color: #1ebc57; }
-.whatsapp-float img { width: 35px; height: 35px; }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -312,6 +358,8 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .header-badges { justify-content: center; }
   .numero-gigante { font-size: 4rem; }
   .eslogan-principal { font-size: 1.8rem; }
+  .pre-eslogan { font-size: 1.4rem; }
+  .mas-destacado { font-size: 1.2em; margin-left: 3px; }
   
   .menu-toggle { display: block; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--azul-conservador); flex-direction: column; padding: 20px; }
@@ -319,204 +367,3 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .nav-links a { margin: 10px 0; text-align: center; }
 }
 @media (min-width: 769px) { .menu-toggle { display: none; } }
-/* === AJUSTE TARJETÓN (Solo Logo) === */
-
-.col-logo {
-  width: 40%;
-  border-right: 2px solid #aaa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Centrado vertical y horizontal */
-  padding-right: 15px;
-}
-
-.logo-tarjeton {
-  width: 90%; /* Aumentado ligeramente para llenar el espacio del texto eliminado */
-  max-width: 100px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 0; /* Eliminado margen inferior innecesario */
-}
-
-/* Nota: Si tenías estilos para .nombre-partido, ya no se usan y puedes borrarlos o ignorarlos */
-
-/* === ESTILO NUEVA FRASE (TAREA 2) === */
-.pre-eslogan {
-  font-family: 'Montserrat', sans-serif; /* Misma fuente de títulos */
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 5px; /* Espacio pequeño antes del eslogan principal */
-  letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para lectura perfecta */
-}
-
-/* Ajuste Mobile para la nueva frase */
-@media (max-width: 768px) {
-  .pre-eslogan {
-    font-size: 1.4rem;
-  }
-}
-/* === ESTILOS PARA "MÁS" DESTACADO === */
-
-/* 1. Estilo Base del texto "MÁS" */
-.mas-destacado {
-  font-family: 'Permanent Marker', cursive, sans-serif; /* Fuente tipo marcador */
-  color: #ffdd00; /* Amarillo bandera (coherente con identidad) */
-  font-size: 1.3em; /* Un poco más grande que el resto */
-  display: inline-block; /* Necesario para que la animación funcione */
-  text-shadow: 2px 2px 0px #0033a0; /* Sombra dura azul para contraste pop */
-  
-  /* 2. Configuración de la Animación */
-  animation: latidoOrganico 2s infinite ease-in-out;
-  
-  /* Ajuste fino de posición */
-  position: relative;
-  top: 2px;
-  margin-left: 5px;
-}
-
-/* 3. Definición de la Animación (Keyframes) */
-@keyframes latidoOrganico {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.15) rotate(-3deg); /* Crece un poco y se inclina */
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-/* 4. Ajuste Mobile (Para que no se rompa en pantallas pequeñas) */
-@media (max-width: 768px) {
-  .mas-destacado {
-    font-size: 1.2em;
-    margin-left: 3px;
-  }
-}
-/* === BOTÓN GRUPO WHATSAPP === */
-.btn-whatsapp-group {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background-color: white; /* Fondo blanco para contraste en sección oscura */
-  color: #25d366; /* Verde oficial WhatsApp */
-  padding: 12px 35px;
-  text-decoration: none;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.btn-whatsapp-group img {
-  width: 28px;
-  height: 28px;
-}
-
-.btn-whatsapp-group:hover {
-  background-color: #25d366;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-}
-
-.btn-whatsapp-group:hover img {
-  filter: brightness(0) invert(1); /* Vuelve el icono blanco al pasar el mouse */
-}
-
-/* === SECCIÓN TESTIMONIOS === */
-.bg-gris-suave {
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.testimonio-card {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  border-left: 5px solid var(--azul-conservador); /* Línea de identidad */
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonio-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonio-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.avatar-circle {
-  width: 50px;
-  height: 50px;
-  background-color: var(--azul-oscuro);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.testimonio-info h5 {
-  margin: 0;
-  color: var(--texto);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.testimonio-info .cargo {
-  font-size: 0.85rem;
-  color: #666;
-  font-style: italic;
-}
-
-.testimonio-text {
-  font-style: italic;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.estrellas {
-  color: #ffdd00; /* Amarillo institucional */
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-}
-
-.testimonio-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.testimonio-footer a {
-  color: var(--azul-conservador);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.testimonio-footer a:hover {
-  text-decoration: underline;
-}
-

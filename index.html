@@ -8,9 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,14 +21,13 @@
         <img src="img/logo-partido.png" alt="Partido Conservador" class="nav-logo-img">
         <span class="nav-text">JORGE RAYO – SENADO <strong>#82</strong></span>
       </div>
-      
       <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-
       <div class="nav-links">
         <a href="#presentacion">Inicio</a>
         <a href="#propuesta">Propuestas</a>
         <a href="#como-votar" class="highlight-link">Cómo Votar</a>
         <a href="#trayectoria">Trayectoria</a>
+        <a href="#testimonios">Historias</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
@@ -41,20 +40,14 @@
           <img src="img/logo-partido.png" alt="Partido Conservador" class="hero-logo">
           <div class="numero-gigante">#82</div>
         </div>
-
-        <p class="pre-eslogan">
-          CONTIGO SOMOS <span class="mas-destacado">MÁS:</span>
-        </p>
-
+        <p class="pre-eslogan">CONTIGO SOMOS <span class="mas-destacado">MÁS</span></p>
         <h1 class="eslogan-principal">
           Por los que <span class="resaltado">madrugan</span>,<br>
           por los que <span class="resaltado">trasnochan</span>,<br>
           por los que nos <span class="resaltado">cuidan</span>.
         </h1>
-
         <div class="cargo-badge">Senado 2026 - 2030</div>
-        
-        </div>
+      </div>
     </div>
   </header>
 
@@ -65,25 +58,42 @@
   <section id="propuesta">
     <div class="section-header">
       <h3>🇨🇴 Mis Banderas</h3>
-      <p>Tres pilares fundamentales para proteger a la familia colombiana.</p>
+      <p>Propuestas reales para problemas reales.</p>
     </div>
+    
     <div class="grid-3">
       <article class="card">
-        <h4>Trabajo Honesto</h4>
-        <p>Incentivos reales para la pequeña empresa y el emprendedor.</p>
+        <h4>"¡Su vida es de alto riesgo y el Estado debe reconocerlo!"</h4>
+        <p class="excerpt">Reconocimiento legal para la seguridad privada. No podemos seguir negando la peligrosidad de su labor.</p>
+        <button class="btn-leer-mas" data-target="modal-prop1">Leer más</button>
       </article>
+
       <article class="card">
-        <h4>Seguridad</h4>
-        <p>Apoyo total a la fuerza pública y reforma a la justicia.</p>
+        <h4>"Quien madruga toda su vida no puede morir trabajando"</h4>
+        <p class="excerpt">Pensión anticipada y protección del ahorro. Jubilación justa a los 55 años para profesiones de alto riesgo.</p>
+        <button class="btn-leer-mas" data-target="modal-prop2">Leer más</button>
       </article>
+
       <article class="card">
-        <h4>Familia</h4>
-        <p>Defensa de los valores y apoyo a madres cabeza de hogar.</p>
+        <h4>"El futuro no es un favor: es un derecho"</h4>
+        <p class="excerpt">Empleo real para jóvenes sin la trampa de la "experiencia previa". Contratos dignos, no prestación de servicios.</p>
+        <button class="btn-leer-mas" data-target="modal-prop3">Leer más</button>
+      </article>
+      
+       <article class="card">
+        <h4>"Un país seguro sí es posible"</h4>
+        <p class="excerpt">Si se gobierna con conocimiento y carácter. Plan nacional de barrios seguros con tecnología y control ciudadano.</p>
+        <button class="btn-leer-mas" data-target="modal-prop4">Leer más</button>
       </article>
     </div>
   </section>
 
   <section id="como-votar" class="bg-voto">
+    
+    <div class="alerta-cedula">
+      ❗️ IMPORTANTE ❗️ Debes tener tu cédula inscrita para ejercer tu derecho al voto.
+    </div>
+
     <div class="section-header">
       <h3>🗳️ Pedagogía Electoral</h3>
       <p>Para que tu voto sea válido, marca así en el tarjetón de <strong>Senado</strong>:</p>
@@ -92,12 +102,10 @@
     <div class="simulador-wrapper">
       <div class="tarjeton-demo">
         <div class="tarjeton-header">CIRCUNSCRIPCIÓN NACIONAL SENADO</div>
-        
         <div class="tarjeton-body">
           <div class="col-logo">
             <img src="img/logo-partido.png" alt="Partido Conservador" class="logo-tarjeton">
           </div>
-
           <div class="col-numeros single-focus">
             <div class="casilla-objetivo" id="casilla-82">
               82
@@ -109,16 +117,10 @@
           </div>
         </div>
       </div>
-
       <div class="instrucciones-voto">
-        <h4 class="instruccion-item">
-            <span class="step-num">1</span> 
-            Busca el Logo de 
-            <img src="img/logo-partido.png" alt="Partido Conservador" class="logo-inline">
-        </h4>
+        <h4 class="instruccion-item"><span class="step-num">1</span> Busca el Logo de <img src="img/logo-partido.png" alt="Partido Conservador" class="logo-inline"></h4>
         <h4 class="instruccion-item"><span class="step-num">2</span> Ubica el número 82</h4>
         <h4 class="instruccion-item"><span class="step-num">3</span> Marca una X sin salirte</h4>
-        <p class="nota-legal">* Si te sales del cuadro, el voto podría anularse.</p>
       </div>
     </div>
   </section>
@@ -127,104 +129,122 @@
     <div class="section-header">
       <h3>📜 Trayectoria y Servicio</h3>
     </div>
-    <div class="bio-content">
-      <p>Jorge Rayo cuenta con una hoja de vida intachable, basada en el servicio comunitario y la gestión pública transparente.</p>
-      <ul class="lista-trayectoria">
-        <li>Más de 15 años de experiencia en el sector público.</li>
-        <li>Defensor de los derechos de los transportadores.</li>
-        <li>Líder de proyectos de infraestructura comunitaria.</li>
-      </ul>
+    <div class="grid-2-trayectoria">
+        <article class="card bio-card">
+            <h4>"No promete lo que no conoce. Propone lo que ha vivido"</h4>
+            <p>Hijo de familia trabajadora, hecho a pulso. De la Armada Nacional al liderazgo en seguridad privada.</p>
+            <button class="btn-leer-mas" data-target="modal-bio1">Leer más</button>
+        </article>
+        <article class="card bio-card">
+            <h4>"Sabe cómo prevenir el delito, no cómo explicarlo después"</h4>
+            <p>Más de 30 años salvando vidas y anticipando riesgos. Experiencia técnica real, no de escritorio.</p>
+            <button class="btn-leer-mas" data-target="modal-bio2">Leer más</button>
+        </article>
     </div>
   </section>
 
-  <section id="mensaje" class="bg-light">
-    <div class="mensaje-box">
-      <h3>📣 Mensaje Político</h3>
-      <p>"Este proyecto político no es mío, es de quienes se levantan a las 4 a.m. a construir país. Llegaré al Senado para ser la voz de los que no han sido escuchados."</p>
-      <cite>- Jorge Rayo</cite>
-    </div>
-  </section>
-
- <section id="testimonios" class="bg-gris-suave">
+  <section id="testimonios" class="bg-gris-suave">
     <div class="section-header">
-      <h3>💬 La Voz de la Gente</h3>
-      <p>Historias reales de quienes confían en este proyecto de país.</p>
+      <h3>💬 Historias de la Gente</h3>
+      <p>Voces reales que se suman al cambio.</p>
     </div>
 
-    <div class="grid-3">
-      
+    <div class="grid-3" id="historias-container">
       <article class="testimonio-card">
         <div class="testimonio-header">
           <div class="avatar-circle">MR</div>
-          <div class="testimonio-info">
-            <h5>María Rodríguez</h5>
-            <span class="cargo">Madre Comunitaria</span>
-          </div>
+          <div class="testimonio-info"><h5>María Rodríguez</h5><span class="cargo">Madre Comunitaria</span></div>
         </div>
-        <p class="testimonio-text">
-          "Por fin un candidato que entiende lo que es madrugar a trabajar. Jorge no promete cosas imposibles, habla de seguridad y trabajo real para nuestros hijos."
-        </p>
-        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-text">"Jorge entiende lo que es madrugar. No promete imposibles, habla de seguridad real para nuestros hijos."</p>
       </article>
-
       <article class="testimonio-card">
         <div class="testimonio-header">
           <div class="avatar-circle">CP</div>
-          <div class="testimonio-info">
-            <h5>Carlos Pérez</h5>
-            <span class="cargo">Pequeño Empresario</span>
-          </div>
+          <div class="testimonio-info"><h5>Carlos Pérez</h5><span class="cargo">Vigilante</span></div>
         </div>
-        <p class="testimonio-text">
-          "La propuesta de apoyo al emprendedor es lo que necesitamos. Menos impuestos y más seguridad para abrir nuestros negocios sin miedo."
-        </p>
-        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-text">"Por fin alguien habla de la prima de riesgo. Llevo 15 años cuidando edificios y nadie nos había valorado."</p>
       </article>
-
       <article class="testimonio-card">
         <div class="testimonio-header">
           <div class="avatar-circle">LG</div>
-          <div class="testimonio-info">
-            <h5>Lucía Gómez</h5>
-            <span class="cargo">Líder Juvenil</span>
-          </div>
+          <div class="testimonio-info"><h5>Lucía Gómez</h5><span class="cargo">Estudiante</span></div>
         </div>
-        <p class="testimonio-text">
-          "Me gusta que defienda los valores de la familia pero con una visión moderna. Es el equilibrio que Colombia necesita en el Senado."
-        </p>
-        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-text">"Me gusta que defienda el primer empleo sin experiencia. Es la oportunidad que esperamos."</p>
       </article>
-
+      
+      <article class="testimonio-card hidden-story">
+        <div class="testimonio-header">
+          <div class="avatar-circle">AR</div>
+          <div class="testimonio-info"><h5>Andrés Ruiz</h5><span class="cargo">Transportador</span></div>
+        </div>
+        <p class="testimonio-text">"La seguridad en las vías es vital. Jorge sabe del tema y tiene carácter para poner orden."</p>
+      </article>
+      <article class="testimonio-card hidden-story">
+        <div class="testimonio-header">
+          <div class="avatar-circle">SB</div>
+          <div class="testimonio-info"><h5>Sofía Benitez</h5><span class="cargo">Emprendedora</span></div>
+        </div>
+        <p class="testimonio-text">"Necesitamos tranquilidad para trabajar. Confío en su propuesta de seguridad inteligente."</p>
+      </article>
     </div>
 
-    <div class="testimonio-footer">
-      <p>¿Tienes una historia con Jorge? <a href="https://wa.me/573176985235" target="_blank">Envíala aquí</a> para publicarla.</p>
+    <div class="acciones-historias">
+        <button id="btn-ver-mas-historias" class="btn-secondary">Ver más historias</button>
+        
+        <a href="https://wa.me/573176985235?text=Hola%2C%20quiero%20compartir%20mi%20historia.%0ANombre%3A%0AOcupaci%C3%B3n%3A%0AMi%20historia%3A" class="btn-whatsapp-historia" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Comparte tu historia
+        </a>
     </div>
   </section>
-  
-<section id="contacto" class="bg-dark">
+
+  <section id="contacto" class="bg-dark">
     <h3>Únete a la Comunidad</h3>
-    <p class="texto-contacto">
-      Este movimiento lo construimos todos. Entérate de noticias, eventos y coordina con nosotros en tiempo real.
-    </p>
-    
-    <a href="https://chat.whatsapp.com/FGQlh54UJqB1377Mlby3UM" class="btn-whatsapp-group" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp">
-      Únete al grupo de WhatsApp
+    <p class="texto-contacto">Entérate de noticias, eventos y coordina con nosotros.</p>
+    <a href="https://chat.whatsapp.com/TU_LINK_DE_INVITACION" class="btn-whatsapp-group" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Únete al grupo de WhatsApp
     </a>
   </section>
 
   <footer>
     <div class="footer-logo">
       <img src="img/logo-partido.png" alt="Partido Conservador" style="width: 40px;">
-      <span>JORGE RAYO – SENADO  <strong>#82</strong></span>
+      <span>JORGE RAYO – SENADO <strong>#82</strong></span>
     </div>
     <p>© 2026 Publicidad Política Pagada</p>
   </footer>
 
-  <a href="https://wa.me/573176985235?text=Hola%20Jorge,%20quiero%20sumarme%20al%20equipo" class="whatsapp-float" target="_blank" aria-label="Habla con el equipo de Jorge Rayo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
+  <div id="modal-overlay" class="modal-overlay"></div>
+  
+  <div id="modal-prop1" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Alto Riesgo y Dignidad</h3>
+    <p>La profesión de seguridad privada con porte de armas debe ser clasificada como actividad de alto riesgo[cite: 48]. Esto permitirá legislar para modificar el Decreto Ley 356 de 1994 y crear una bonificación del 20% obligatoria ("Prima de Riesgo")[cite: 55].</p>
+  </div>
+  <div id="modal-prop2" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Pensión Justa</h3>
+    <p>Garantizaremos una pensión anticipada a los 55 años que compense el desgaste físico y mental[cite: 56]. Esto aplica también para conductores de carga, sector salud en zonas críticas y operarios de maquinaria pesada[cite: 57].</p>
+  </div>
+  <div id="modal-prop3" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Empleo Joven</h3>
+    <p>Prohibiremos el uso de "experiencia" como filtro excluyente para el primer empleo[cite: 69]. Incentivos a empresas que contraten con estabilidad mínima de dos años y obligatoriedad de prácticas pagas [cite: 67-68].</p>
+  </div>
+  <div id="modal-prop4" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Seguridad Inteligente</h3>
+    <p>Plan nacional de barrios seguros con cámaras, botones de pánico y entornos escolares protegidos de la venta de sustancias [cite: 63-64]. Tecnología con control ciudadano para recuperar la tranquilidad.</p>
+  </div>
+  <div id="modal-bio1" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Hecho a Pulso</h3>
+    <p>Nacido en Puerto Leguízamo, Putumayo[cite: 5]. Ingresó a la Armada Nacional formándose como Electrónico Naval, Submarinista y Buzo Táctico[cite: 5]. Entiende que la disciplina y la honestidad son formas de vida.</p>
+  </div>
+  <div id="modal-bio2" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Experiencia Real</h3>
+    <p>Ha liderado sistemas de seguridad para empresas nacionales e internacionales[cite: 10]. Su enfoque es prevenir el delito antes de que ocurra. No es un político de escritorio, viene del terreno[cite: 7].</p>
+  </div>
 
   <script src="script.js"></script>
 </body>
