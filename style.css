@@ -80,7 +80,8 @@ header {
 }
 
 .hero-overlay {
-  background: linear-gradient(to right, rgba(0, 51, 160, 0.85) 40%, rgba(0, 51, 160, 0.1));
+  /* CAMBIO: Eliminado el gradiente azul translúcido */
+  background: none; 
   width: 100%;
   height: 100%;
   display: flex;
@@ -109,14 +110,16 @@ header {
 .numero-gigante {
   font-size: 5rem;
   line-height: 1;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  /* AJUSTE: Sombra más fuerte para legibilidad sin filtro */
+  text-shadow: 0 4px 20px rgba(0,0,0,0.9);
 }
 
 .eslogan-principal {
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 20px;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  /* AJUSTE: Sombra más fuerte para legibilidad sin filtro */
+  text-shadow: 0 2px 20px rgba(0,0,0,0.9);
 }
 
 .resaltado { color: #ffdd00; }
@@ -130,6 +133,7 @@ header {
   text-transform: uppercase;
   margin-bottom: 30px;
   border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra añadida */
 }
 
 .pre-eslogan {
@@ -140,7 +144,8 @@ header {
   text-transform: uppercase;
   margin-bottom: 5px;
   letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  /* AJUSTE: Sombra más fuerte para legibilidad sin filtro */
+  text-shadow: 0 2px 15px rgba(0,0,0,0.9);
 }
 
 .mas-destacado {
@@ -287,7 +292,7 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
   display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
   background: white; padding: 30px; width: 90%; max-width: 600px; border-radius: 10px;
   z-index: 2001; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 5px solid var(--azul-conservador);
-  max-height: 80vh; overflow-y: auto; /* Scroll si el texto es muy largo */
+  max-height: 80vh; overflow-y: auto;
 }
 .active-modal { display: block; }
 .close-modal { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #999; }
