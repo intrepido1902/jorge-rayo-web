@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // 1. Lógica Menú Móvil
+  // 1. Menú Móvil
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if(menuToggle && navLinks) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Lógica Animación Voto (IntersectionObserver)
+  // 2. Animación Voto
   const casilla = document.getElementById('casilla-82');
   const sectionVoto = document.getElementById('como-votar');
   if (casilla && sectionVoto) {
@@ -26,12 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sectionVoto);
   }
 
-  // 3. Lógica "Leer Más" (Modales)
+  // 3. Modales "Leer Más"
   const btnsLeerMas = document.querySelectorAll('.btn-leer-mas');
   const overlay = document.getElementById('modal-overlay');
   const closeBtns = document.querySelectorAll('.close-modal');
 
-  // Abrir Modal
   btnsLeerMas.forEach(btn => {
     btn.addEventListener('click', () => {
       const modalId = btn.getAttribute('data-target');
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cerrar Modal (Botón X y Overlay)
   const closeModal = () => {
     document.querySelectorAll('.modal').forEach(m => m.classList.remove('active-modal'));
     overlay.classList.remove('active-modal');
@@ -52,17 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
   closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
   if(overlay) overlay.addEventListener('click', closeModal);
 
-  // 4. Lógica "Ver Más Historias"
+  // 4. Historias "Ver Más"
   const btnVerMasHistorias = document.getElementById('btn-ver-mas-historias');
   const hiddenStories = document.querySelectorAll('.hidden-story');
 
   if(btnVerMasHistorias) {
     btnVerMasHistorias.addEventListener('click', () => {
       hiddenStories.forEach(story => {
-        story.classList.add('active-story'); // Clase para mostrar
-        story.classList.remove('hidden-story'); // Quitar clase de oculto
+        story.classList.add('active-story');
+        story.classList.remove('hidden-story');
       });
-      btnVerMasHistorias.style.display = 'none'; // Ocultar botón tras usarlo
+      btnVerMasHistorias.style.display = 'none';
     });
   }
 });
