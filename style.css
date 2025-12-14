@@ -27,7 +27,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 26, 77, 0.98); /* Más opaco para legibilidad */
+  background: rgba(0, 26, 77, 0.98);
   padding: 10px 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -67,97 +67,74 @@ nav {
   border-radius: 20px;
 }
 
-/* === HERO HEADER (OPTIMIZADO) === */
+/* === HERO HEADER (CORREGIDO: CERO TARJETAS) === */
 header {
   height: 100vh;
-  min-height: 600px; /* Evita colapsos en pantallas apaisadas */
+  min-height: 600px;
   position: relative;
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  /* Posición base para Móvil: Centrado horizontal, Top para la cara */
+  /* MÓVIL (Default): Cara arriba, espacio abajo para texto */
   background-position: center top; 
-  background-color: var(--azul-oscuro); /* Fallback */
+  background-color: transparent;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Alineamos texto abajo en móvil */
 }
 
 .hero-overlay {
-  /* CERO OVERLAYS: Limpio total */
+  /* ELIMINADO: Fondos, gradientes y tarjetas */
   background: none !important;
   width: 100%;
   height: 100%;
   display: flex;
-  /* Móvil: Texto abajo para no tapar la cara */
+  /* MÓVIL: Texto abajo */
   align-items: flex-end; 
-  padding: 0 5% 40px 5%; /* Padding bottom extra en móvil */
+  /* Padding inferior grande para subir el texto y no tapar manos/cuerpo bajo */
+  padding: 0 5% 100px 5%; 
 }
 
 .hero-content {
   width: 100%;
-  max-width: 650px;
-  text-align: center; /* Móvil: Centrado */
-  /* Móvil: Fondo sólido detrás del texto para legibilidad */
-  background: rgba(0, 26, 77, 0.85); 
-  padding: 25px;
-  border-radius: 15px;
-  backdrop-filter: blur(5px); /* Efecto moderno vidrio */
-  border: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 20px;
+  max-width: 700px;
+  /* ELIMINADO: Background, border, backdrop-filter (La tarjeta sólida) */
+  background: none;
+  border: none;
+  backdrop-filter: none;
+  text-align: center; /* Móvil centrado */
+  margin: 0 auto;
+  padding: 0;
 }
 
 .header-badges {
   display: flex;
   align-items: center;
-  justify-content: center; /* Móvil: Centrado */
+  justify-content: center; /* Móvil centrado */
   gap: 15px;
   margin-bottom: 15px;
 }
 
 .hero-logo {
-  height: 70px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  height: 80px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
 }
 
 .numero-gigante {
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1;
-  text-shadow: 0 2px 10px rgba(0,0,0,1);
-}
-
-.eslogan-principal {
-  font-size: 1.8rem;
-  line-height: 1.3;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 10px rgba(0,0,0,1);
-}
-
-.resaltado { 
-  color: #ffdd00;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-}
-
-.cargo-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  padding: 5px 15px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  border: 1px solid rgba(255,255,255,0.3);
-  font-size: 0.9rem;
+  /* LEGIBILIDAD PURA: Sombra fuerte */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
 
 .pre-eslogan {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 5px;
   letter-spacing: 1px;
-  text-shadow: 0 2px 5px rgba(0,0,0,1);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.9);
 }
 
 .mas-destacado {
@@ -165,11 +142,38 @@ header {
   color: #ffdd00;
   font-size: 1.3em;
   display: inline-block;
-  text-shadow: 2px 2px 0px #0033a0;
+  text-shadow: 3px 3px 0px #001a4d;
   animation: latidoOrganico 2s infinite ease-in-out;
   position: relative;
   top: 2px;
   margin-left: 5px;
+}
+
+.eslogan-principal {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
+}
+
+.resaltado { 
+  color: #ffdd00;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+}
+
+.cargo-badge {
+  display: inline-block;
+  /* Fondo mínimo solo para el badge, casi transparente */
+  background: rgba(255,255,255,0.15);
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  margin-top: 15px;
 }
 
 @keyframes latidoOrganico {
@@ -353,55 +357,36 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-/* === MEDIA QUERIES (DESKTOP & LARGE SCREENS) === */
+/* === MEDIA QUERIES: DESKTOP & LARGE SCREENS === */
 @media (min-width: 1024px) {
   header {
-    /* DESKTOP: Imagen a la derecha, texto a la izquierda */
+    /* DESKTOP: Imagen a la derecha para dejar espacio al texto a la izquierda */
     background-position: right center; 
+    align-items: center; /* Centrado vertical en escritorio */
   }
   
   .hero-overlay {
-    align-items: center; /* Centrado vertical en desktop */
+    align-items: center; /* Texto centrado verticalmente */
     justify-content: flex-start; /* Texto a la izquierda */
     padding-bottom: 0;
   }
 
   .hero-content {
-    background: transparent; /* Sin fondo en desktop, limpio */
-    text-align: left;
-    border: none;
-    backdrop-filter: none;
-    padding: 0;
+    text-align: left; /* Alineación izquierda */
     max-width: 600px;
+    margin: 0;
   }
 
   .header-badges {
     justify-content: flex-start; /* Alineado a la izquierda */
   }
 
-  .numero-gigante {
-    font-size: 5rem;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.9); /* Sombra fuerte */
-  }
-
-  .eslogan-principal {
-    font-size: 2.8rem;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.9);
-  }
-  
-  .pre-eslogan {
-    font-size: 1.8rem;
-    text-shadow: 0 2px 15px rgba(0,0,0,0.9);
-  }
-
-  .nav-links { 
-    display: flex !important; /* Asegura menú visible en desktop */
-  }
-  
+  /* El menú hamburguesa se oculta, se muestra el nav normal */
   .menu-toggle { display: none; }
+  .nav-links { display: flex !important; }
 }
 
-/* === MEDIA QUERIES (TABLET & MOBILE) === */
+/* === MEDIA QUERIES: TABLET & MOBILE === */
 @media (max-width: 1023px) {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--azul-conservador); flex-direction: column; padding: 20px;
