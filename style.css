@@ -67,46 +67,45 @@ nav {
   border-radius: 20px;
 }
 
-/* === HERO HEADER (AJUSTE MILIMÉTRICO FINAL) === */
+/* === HERO HEADER (AJUSTE FINAL DE POSICIÓN Y ENCUADRE) === */
 header {
   height: 100vh;
-  min-height: 700px; /* Aumentado para evitar cortes en móviles altos */
+  min-height: 700px; /* Altura mínima para evitar cortes */
   position: relative;
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  /* MOBILE DEFAULT: Centrado arriba para priorizar cara */
   background-position: center top; 
   background-color: transparent;
-  /* Eliminado display:flex para usar position absolute puro */
-  display: block; 
+  display: block; /* Para permitir position absolute libre */
 }
 
 .hero-overlay {
   background: none !important;
   width: 100%;
   height: 100%;
-  /* Eliminado align-items/padding que interferían */
   padding: 0;
   position: relative;
 }
 
-/* CONTENEDOR FLOTANTE EXACTO */
+/* CONTENEDOR FLOTANTE (AJUSTE MILIMÉTRICO SOLICITADO) */
 .hero-content {
   position: absolute;
-  /* Valor base (Desktop por defecto en CSS mobile-first, se sobreescribe abajo) */
-  top: 62%; 
-  left: 50%;
-  transform: translateX(-50%); /* Centrado horizontal */
+  /* Valores Desktop Base */
+  left: 6%;
+  top: 48%; /* Subimos para coincidir con linea verde */
+  transform: translateY(-50%);
   width: 90%;
-  max-width: 700px;
+  max-width: 520px; /* Ancho controlado para que no invada cara */
   color: #ffffff;
   z-index: 5;
-  text-align: center;
+  text-align: left; /* Alineado izquierda en PC */
   margin: 0;
   padding: 0;
 }
 
-/* REORDENAMIENTO Y ESTILOS INTERNOS */
+/* === ELEMENTOS INTERNOS DEL HERO === */
 .pre-eslogan {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
@@ -133,7 +132,7 @@ header {
 .eslogan-principal {
   font-size: 2.2rem;
   line-height: 1.2;
-  margin-bottom: 20px; /* Espacio antes del logo */
+  margin-bottom: 20px;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
@@ -146,9 +145,9 @@ header {
 .header-badges {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Izquierda en PC */
   gap: 15px;
-  margin-bottom: 15px; /* Espacio antes del badge senado */
+  margin-bottom: 15px;
 }
 
 .hero-logo {
@@ -163,18 +162,21 @@ header {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
 
+/* CAJA SENADO (REALCE SUTIL SOLICITADO) */
 .cargo-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.15);
-  padding: 5px 15px;
+  background-color: rgba(0, 26, 77, 0.4); /* Azul muy sutil para contraste sobre camisa blanca */
+  padding: 8px 20px;
   border-radius: 4px;
   font-weight: 600;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
 }
 
 @keyframes latidoOrganico {
@@ -183,7 +185,7 @@ header {
   100% { transform: scale(1) rotate(0deg); }
 }
 
-/* === RESTO DE ESTILOS (JINGLE, SECCIONES, ETC) === */
+/* === RESTO DE ESTILOS === */
 .jingle-bar { background: var(--gris-claro); border-left: 8px solid var(--azul-conservador); padding: 30px; text-align: center; font-style: italic; font-size: 1.2rem; font-weight: 600; color: var(--azul-oscuro); }
 section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .section-header { text-align: center; margin-bottom: 50px; }
@@ -240,16 +242,24 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-/* === BREAKPOINTS EXACTOS (ORDENADOS Y OBLIGATORIOS) === */
+/* === BREAKPOINTS DE PRECISIÓN (OBLIGATORIOS) === */
 
 /* 1. MOBILE (<= 768px) */
 @media (max-width: 768px) {
-  header { background-position: center top; }
+  header { 
+    background-position: center top; 
+  }
   
   .hero-content {
-    top: 64%; /* Valor exacto solicitado */
-    width: 95%;
+    /* Ajuste milimétrico móvil */
+    top: 54%; 
+    left: 50%;
+    transform: translateX(-50%); /* Centrado */
+    text-align: center;
+    max-width: 95%;
   }
+  
+  .header-badges { justify-content: center; }
   
   .numero-gigante { font-size: 3.5rem; }
   .eslogan-principal { font-size: 1.6rem; }
@@ -267,9 +277,9 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   header { background-position: center top; }
   
   .hero-content {
-    top: 60%; /* Valor exacto solicitado */
+    top: 55%; /* Un poco más abajo que en móvil */
     left: 50%;
-    transform: translateX(-50%); /* Centrado */
+    transform: translateX(-50%);
     text-align: center;
   }
   
@@ -281,18 +291,25 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .nav-links a { margin: 10px 0; text-align: center; }
 }
 
-/* 3. DESKTOP (>= 1025px) */
+/* 3. DESKTOP & LARGE SCREENS (>= 1025px) */
 @media (min-width: 1025px) {
   header {
-    background-position: right center; /* Cara a la derecha */
+    /* CORRECCIÓN IMAGEN CORTADA: Centrada vertical y horizontalmente en PC */
+    background-position: right center; 
+  }
+  
+  /* Ajuste para pantallas muy anchas (UltraWide) para que no se corte arriba/abajo */
+  @media (min-width: 1400px) {
+    header { background-position: center center; }
   }
   
   .hero-content {
-    top: 58%; /* Valor exacto solicitado */
-    left: 5%; /* Alineación izquierda */
-    transform: none; /* Quitamos centrado */
+    /* Valores exactos solicitados para PC */
+    top: 48%; 
+    left: 6%;
+    transform: translateY(-50%); /* Solo centrado vertical, no horizontal */
     text-align: left;
-    width: 50%;
+    max-width: 520px;
   }
   
   .header-badges { justify-content: flex-start; }
