@@ -317,3 +317,84 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   .menu-toggle { display: none; }
   .nav-links { display: flex !important; }
 }
+/* ... (MANTENER VARIABLES Y HEADER) ... */
+
+/* === CORRECCIÓN ANIMACIÓN X === */
+.x-animada { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none; 
+}
+
+.x-animada path { 
+  fill: none; 
+  stroke: var(--acento); 
+  stroke-width: 8; 
+  stroke-linecap: round; 
+  stroke-dasharray: 100; 
+  stroke-dashoffset: 100; 
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s;
+}
+
+/* La clase se añade al DIV padre (#casilla-82) */
+.active-animation .trazo1 { 
+  animation: drawLine 1.5s forwards; /* Forwards mantiene el estado final */
+  animation-delay: 0.2s;
+}
+
+.active-animation .trazo2 { 
+  animation: drawLine 1.5s forwards; 
+  animation-delay: 0.5s; 
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 100; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* === CORRECCIÓN MODALES (Z-INDEX Y DISPLAY) === */
+.modal-overlay {
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.8); /* Un poco más oscuro para enfoque */
+  z-index: 2000;
+  backdrop-filter: blur(3px); /* Efecto moderno */
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  background: white; 
+  padding: 30px; 
+  width: 90%; 
+  max-width: 600px; 
+  border-radius: 10px;
+  z-index: 2001; /* Siempre encima del overlay */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+  border-top: 5px solid var(--azul-conservador);
+  max-height: 85vh; 
+  overflow-y: auto;
+}
+
+/* Clase de utilidad para mostrar */
+.active-modal { 
+  display: block !important; 
+  animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
