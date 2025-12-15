@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const icon = navLinks.classList.contains('active') ? '✕' : '☰';
       menuToggle.textContent = icon;
     });
+
+    // Cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.textContent = '☰';
+      });
+    });
   }
 
   // 2. Restauración Animación Voto (X)

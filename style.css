@@ -205,11 +205,6 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .logo-tarjeton { width: 90%; max-width: 100px; height: auto; object-fit: contain; margin-bottom: 0; }
 .col-numeros.single-focus { width: 60%; padding-left: 15px; display: flex; justify-content: center; align-items: center; }
 .casilla-objetivo { width: 80px; height: 60px; transform: scale(1.3); box-shadow: 0 4px 10px rgba(0,51,160, 0.15); border: 2px solid var(--azul-conservador); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--azul-conservador); font-size: 1.2rem; position: relative; background-color: rgba(0, 51, 160, 0.05); }
-.x-animada { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-.x-animada path { fill: none; stroke: var(--acento); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; }
-.active-animation .trazo1 { animation: drawLine 2s infinite; opacity: 1; }
-.active-animation .trazo2 { animation: drawLine 2s infinite; animation-delay: 0.3s; opacity: 1; }
-@keyframes drawLine { 0% { stroke-dashoffset: 100; } 30% { stroke-dashoffset: 0; } 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
 .logo-inline { height: 1.4em; vertical-align: middle; margin: 0 4px; display: inline-block; transform: translateY(-2px); }
 .instruccion-item { display: flex; align-items: center; flex-wrap: wrap; margin-bottom: 15px; }
 .step-num { background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem; flex-shrink: 0; }
@@ -342,17 +337,17 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 
 /* La clase se añade al DIV padre (#casilla-82) */
 .active-animation .trazo1 { 
-  animation: drawLine 1.5s forwards; /* Forwards mantiene el estado final */
-  animation-delay: 0.2s;
+  animation: drawLine 2s infinite;
 }
 
 .active-animation .trazo2 { 
-  animation: drawLine 1.5s forwards; 
-  animation-delay: 0.5s; 
+  animation: drawLine 2s infinite;
+  animation-delay: 0.3s;
 }
 
 @keyframes drawLine {
   0% { stroke-dashoffset: 100; opacity: 1; }
+  50% { stroke-dashoffset: 0; opacity: 1; }
   100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
@@ -397,4 +392,3 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   from { opacity: 0; transform: translate(-50%, -45%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
-
