@@ -67,18 +67,17 @@ nav {
   border-radius: 20px;
 }
 
-/* === HERO HEADER (AJUSTE FINAL DE POSICIÓN Y ENCUADRE) === */
+/* === HERO HEADER === */
 header {
   height: 100vh;
-  min-height: 700px; /* Altura mínima para evitar cortes */
+  min-height: 700px;
   position: relative;
   background-image: url('img/hero-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  /* MOBILE DEFAULT: Centrado arriba para priorizar cara */
   background-position: center top; 
   background-color: transparent;
-  display: block; /* Para permitir position absolute libre */
+  display: block; 
 }
 
 .hero-overlay {
@@ -89,18 +88,16 @@ header {
   position: relative;
 }
 
-/* CONTENEDOR FLOTANTE (AJUSTE MILIMÉTRICO SOLICITADO) */
 .hero-content {
   position: absolute;
-  /* Valores Desktop Base */
   left: 6%;
-  top: 48%; /* Subimos para coincidir con linea verde */
+  top: 48%; 
   transform: translateY(-50%);
   width: 90%;
-  max-width: 520px; /* Ancho controlado para que no invada cara */
+  max-width: 520px;
   color: #ffffff;
   z-index: 5;
-  text-align: left; /* Alineado izquierda en PC */
+  text-align: left;
   margin: 0;
   padding: 0;
 }
@@ -145,7 +142,7 @@ header {
 .header-badges {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Izquierda en PC */
+  justify-content: flex-start;
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -162,10 +159,9 @@ header {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.9);
 }
 
-/* CAJA SENADO (REALCE SUTIL SOLICITADO) */
 .cargo-badge {
   display: inline-block;
-  background-color: rgba(0, 26, 77, 0.4); /* Azul muy sutil para contraste sobre camisa blanca */
+  background-color: rgba(0, 26, 77, 0.4);
   padding: 8px 20px;
   border-radius: 4px;
   font-weight: 600;
@@ -210,11 +206,6 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .step-num { background: var(--azul-conservador); color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-block; text-align: center; line-height: 25px; margin-right: 10px; font-size: 0.9rem; flex-shrink: 0; }
 .nota-legal { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 20px; }
 .grid-2-trayectoria { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: auto; }
-.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; }
-.modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; width: 90%; max-width: 600px; border-radius: 10px; z-index: 2001; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 5px solid var(--azul-conservador); max-height: 80vh; overflow-y: auto; }
-.active-modal { display: block; }
-.close-modal { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #999; }
-.bg-gris-suave { background-color: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; }
 .testimonio-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-left: 5px solid var(--azul-conservador); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
 .testimonio-card:hover { transform: translateY(-5px); }
 .testimonio-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
@@ -236,8 +227,94 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; }
 .btn-whatsapp-group img { width: 28px; height: 28px; }
 footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
+.bg-gris-suave { background-color: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; }
 
-/* === BREAKPOINTS DE PRECISIÓN (OBLIGATORIOS) === */
+/* === CORRECCIÓN ANIMACIÓN X (REALISTA/ORGÁNICA) === */
+.x-animada { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none; 
+}
+
+.x-animada path { 
+  fill: none; 
+  stroke: var(--acento);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120; 
+  opacity: 0;
+}
+
+.active-animation .trazo1 { 
+  animation: drawLineReal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.active-animation .trazo2 { 
+  animation: drawLineReal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes drawLineReal {
+  0% { 
+    stroke-dashoffset: 120; 
+    opacity: 1; 
+  }
+  100% { 
+    stroke-dashoffset: 0; 
+    opacity: 1; 
+  }
+}
+
+/* === MODALES (ESTILOS Y Z-INDEX) === */
+.modal-overlay {
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  background: white; 
+  padding: 30px; 
+  width: 90%; 
+  max-width: 600px; 
+  border-radius: 10px;
+  z-index: 2001; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+  border-top: 5px solid var(--azul-conservador);
+  max-height: 85vh; 
+  overflow-y: auto;
+}
+
+.active-modal { 
+  display: block !important; 
+  animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.close-modal { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #999; }
+
+/* === BREAKPOINTS === */
 
 /* 1. MOBILE (<= 768px) */
 @media (max-width: 768px) {
@@ -246,10 +323,9 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   }
   
   .hero-content {
-    /* Ajuste milimétrico móvil */
     top: 54%; 
     left: 50%;
-    transform: translateX(-50%); /* Centrado */
+    transform: translateX(-50%);
     text-align: center;
     max-width: 95%;
   }
@@ -272,7 +348,7 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
   header { background-position: center top; }
   
   .hero-content {
-    top: 55%; /* Un poco más abajo que en móvil */
+    top: 55%; 
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -289,106 +365,31 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 /* 3. DESKTOP & LARGE SCREENS (>= 1025px) */
 @media (min-width: 1025px) {
   header {
-    /* CORRECCIÓN IMAGEN CORTADA: Centrada vertical y horizontalmente en PC */
-    background-position: right center; 
+    /* CORRECCIÓN: Foto anclada a la derecha y bajada al 15% para ver la cara completa */
+    background-position: 80% 15%; 
   }
   
-  /* Ajuste para pantallas muy anchas (UltraWide) para que no se corte arriba/abajo */
-  @media (min-width: 1400px) {
-    header { background-position: center center; }
-  }
-  
+  /* CORRECCIÓN: Evitar que el texto invada la foto */
   .hero-content {
-    /* Valores exactos solicitados para PC */
-    top: 48%; 
-    left: 6%;
-    transform: translateY(-50%); /* Solo centrado vertical, no horizontal */
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: left;
-    max-width: 520px;
+    max-width: 45%; 
   }
   
   .header-badges { justify-content: flex-start; }
-  
   .menu-toggle { display: none; }
   .nav-links { display: flex !important; }
 }
-/* ... (MANTENER VARIABLES Y HEADER) ... */
 
-/* === CORRECCIÓN ANIMACIÓN X === */
-.x-animada { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  pointer-events: none; 
-}
-
-.x-animada path { 
-  fill: none; 
-  stroke: var(--acento); 
-  stroke-width: 8; 
-  stroke-linecap: round; 
-  stroke-dasharray: 100; 
-  stroke-dashoffset: 100; 
-  opacity: 0; /* Oculto inicialmente */
-  transition: opacity 0.3s;
-}
-
-/* La clase se añade al DIV padre (#casilla-82) */
-.active-animation .trazo1 { 
-  animation: drawLine 2s infinite;
-}
-
-.active-animation .trazo2 { 
-  animation: drawLine 2s infinite;
-  animation-delay: 0.3s;
-}
-
-@keyframes drawLine {
-  0% { stroke-dashoffset: 100; opacity: 1; }
-  50% { stroke-dashoffset: 0; opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-
-/* === CORRECCIÓN MODALES (Z-INDEX Y DISPLAY) === */
-.modal-overlay {
-  display: none; 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  background: rgba(0,0,0,0.8); /* Un poco más oscuro para enfoque */
-  z-index: 2000;
-  backdrop-filter: blur(3px); /* Efecto moderno */
-}
-
-.modal {
-  display: none; 
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  background: white; 
-  padding: 30px; 
-  width: 90%; 
-  max-width: 600px; 
-  border-radius: 10px;
-  z-index: 2001; /* Siempre encima del overlay */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-  border-top: 5px solid var(--azul-conservador);
-  max-height: 85vh; 
-  overflow-y: auto;
-}
-
-/* Clase de utilidad para mostrar */
-.active-modal { 
-  display: block !important; 
-  animation: fadeInModal 0.3s ease-out;
-}
-
-@keyframes fadeInModal {
-  from { opacity: 0; transform: translate(-50%, -45%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+/* 4. ULTRAWIDE (> 1400px) */
+@media (min-width: 1400px) {
+  header { 
+    /* Ajuste fino para pantallas gigantes */
+    background-position: 80% 10%; 
+  }
+  .hero-content {
+    max-width: 600px;
+  }
 }
