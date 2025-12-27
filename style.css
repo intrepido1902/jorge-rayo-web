@@ -8,14 +8,16 @@
   --acento: #c8102e;
 }
 
+/* === CORRECCIÓN NAVEGACIÓN FLUIDA === */
 html {
-  scroll-behavior: smooth; /* scroll suavemente al dar clic */
+  scroll-behavior: smooth; /* Habilita el desplazamiento suave nativo */
 }
 
-
-section, #como-votar {
-  scroll-margin-top: 100px; /*  evita que la barra de menú tape el título */
+/* Compensación para el menú fijo (Evita que tape el título) */
+#como-votar {
+  scroll-margin-top: 100px; /* Ajusta este valor si tu menú es más alto */
 }
+
 
 * { box-sizing: border-box; }
 
@@ -234,7 +236,7 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
 .bg-gris-suave { background-color: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; }
 
-/* === ANIMACIÓN X INFINITA (LOOP) === */
+/* === ANIMACIÓN X ROBUSTA (CORREGIDA) === */
 .x-animada { 
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
   pointer-events: none; 
@@ -243,36 +245,31 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
 .x-animada path { 
   fill: none; 
   stroke: var(--acento);
-  stroke-width: 10;
+  stroke-width: 12; /* Trazo más visible */
   stroke-linecap: round; 
   stroke-linejoin: round;
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120; /* Invisible al inicio */
-  opacity: 0;
+  stroke-dasharray: 130; 
+  stroke-dashoffset: 130; 
+  opacity: 0; 
+  transition: opacity 0.3s ease;
 }
 
-/* LA MAGIA: 'infinite' hace que nunca pare */
 .active-animation .trazo1 { 
-  animation: loopMarcado 3.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-  animation-delay: 0s;
-}
-
-.active-animation .trazo2 { 
-  animation: loopMarcado 3.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: dibujarTrazo 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: 0.2s;
 }
 
-@keyframes loopMarcado {
-  /* 0% a 20%: Dibuja la X */
-  0% { stroke-dashoffset: 120; opacity: 1; }
-  20% { stroke-dashoffset: 0; opacity: 1; }
-  
-  /* 20% a 80%: Se queda quieta visible (PAUSA LUEGO DE MARCAR) */
-  80% { stroke-dashoffset: 0; opacity: 1; }
-  
-  /* 90% a 100%: Desaparece suavemente para reiniciar */
-  90% { opacity: 0; }
-  100% { stroke-dashoffset: 120; opacity: 0; }
+.active-animation .trazo2 { 
+  animation: dibujarTrazo 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes dibujarTrazo {
+  0% { stroke-dashoffset: 130; opacity: 0; }
+  10% { opacity: 1; }
+  30% { stroke-dashoffset: 0; }
+  70% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
 /* === MODALES (ESTILOS Y Z-INDEX) === */

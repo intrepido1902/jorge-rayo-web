@@ -21,21 +21,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Restauración Animación Voto (X)
+  // 2. ANIMACIÓN DE LA X (Lógica corregida)
   const casilla = document.getElementById('casilla-82');
   const sectionVoto = document.getElementById('como-votar');
   
+  // Verificación de seguridad para evitar errores en consola si cambia el HTML
   if (casilla && sectionVoto) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2 // CAMBIO: Bajamos a 20% para que se active más fácil en móviles
+    };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Se activa cuando el 30% del elemento es visible
         if (entry.isIntersecting) {
+          // Entra en pantalla: Activa la animación
           casilla.classList.add('active-animation');
         } else {
+          // Sale de pantalla: Pausa la animación (Mejora rendimiento)
           casilla.classList.remove('active-animation');
         }
       });
-    }, { threshold: 0.3 }); // Bajamos umbral para asegurar que dispare en móvil
+    }, observerOptions);
+
     observer.observe(sectionVoto);
+  } else {
+    console.warn('⚠️ Auditoría: No se encontró #casilla-82 o #como-votar en el DOM.');
   }
 
   // 3. Reparación Botones "Leer Más" (Modales)
