@@ -8,6 +8,15 @@
   --acento: #c8102e;
 }
 
+html {
+  scroll-behavior: smooth; /* scroll suavemente al dar clic */
+}
+
+
+section, #como-votar {
+  scroll-margin-top: 100px; /*  evita que la barra de menú tape el título */
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -391,3 +400,4 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
     max-width: 600px;
   }
 }
+/*version en el dominio*/
