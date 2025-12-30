@@ -106,4 +106,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//version en el dominio 
+//domain version
