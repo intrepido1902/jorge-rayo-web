@@ -39,7 +39,7 @@
       <button class="menu-toggle" aria-label="Abrir menú">☰</button>
       <div class="nav-links">
         <a href="#presentacion">Inicio</a>
-        <a href="#propuesta">Propuestas</a>
+        <a href="#quien-es">¿Quién es Jorge Rayo?</a> <a href="#propuesta">Propuestas</a>
         <a href="#como-votar" class="highlight-link">Cómo Votar</a>
         <a href="#trayectoria">Trayectoria</a>
         <a href="#testimonios">Historias</a>
@@ -78,21 +78,12 @@
       <h3>¿Quién es Jorge Rayo?</h3>
     </div>
     
-    <div class="bio-content" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-conservador);">
-      
-      <div class="bio-text">
-        <p>Jorge Rayo es un colombiano hecho a pulso. Nació en Puerto Leguízamo, Putumayo, y aprendió que la vida se defiende con trabajo, disciplina y amor por la familia. Sirvió a Colombia en la Armada Nacional como Electrónico Naval, Submarinista y Buzo Táctico, y desde el año 2001 ha dedicado su vida a cuidar y proteger a otros.</p>
-        
-        <p>Hoy lucha para que ningún hogar viva con miedo y para que la Seguridad, la Tranquilidad y la Confianza sean un derecho para todos, no un privilegio de pocos.</p>
-        
-        <h4 style="color: var(--azul-conservador); margin-top: 25px; margin-bottom: 10px;">Compromiso social:</h4>
-        
-        <p>Desde el año 2010 fundó y lidera la Fundación ONG Mi Pequeño Guardián, inspirado por las madres cabeza de hogar que, aun en medio de la dificultad, nunca se rinden. Mujeres que sostienen solas a sus hijos, enfrentan la inseguridad y cargan en silencio con el futuro del país.</p>
-        
-        <p>Escuchando sus historias entendió que ayudar no basta: hay que cambiar las reglas. Por ellas decidió dar el paso de aspirar al Senado de la República, convencido de que la verdadera seguridad empieza en el hogar, que la tranquilidad se construye protegiendo a quienes más aman y que Colombia solo será justa cuando el Estado cuide a quienes nunca se rinden.</p>
-        
-        <p style="font-weight: 700; color: var(--azul-conservador); margin-top: 15px;">Contigo somos más, para escribir una nueva historia para los trabajadores y sus familias.</p>
-      </div>
+    <div class="grid-2-trayectoria" style="display: flex; justify-content: center;">
+        <article class="card bio-card" style="max-width: 800px; width: 100%; text-align: center;">
+            <h4 style="color: var(--azul-conservador);">Un colombiano hecho a pulso</h4>
+            <p class="excerpt">Nació en Puerto Leguízamo y aprendió que la vida se defiende con trabajo y disciplina. Desde la Armada Nacional hasta el liderazgo social, ha dedicado su vida a cuidar y proteger a otros. Hoy lucha para que la seguridad sea un derecho de todos.</p>
+            <button class="btn-leer-mas" data-target="modal-quien-es-completo">Leer más</button>
+        </article>
     </div>
   </section>
 
@@ -259,68 +250,16 @@
       <h3>📜 Trayectoria y Formación</h3>
     </div> 
     
-    <div class="grid-2-trayectoria">
-        
-        <article class="card bio-card" style="grid-column: 1 / -1; white-space: pre-line;">
-➢ CIA. MIGUEL CABALLERO:
-
-Jefe de Seguridad
-
-Julio 2024 - Actualmente
-➢ PVC GERFOR SAS:
-
-Director de Seguridad
-
-Julio 2018 - abril 2024
-Experiencia laboral:
-➢ TRANSPORTES HUMADEA SAS.
-
-Director de análisis y seguridad
-
-Junio de 2009 - febrero de 2018
-➢ CORPORACIÓN COLOMBIANA DE LOGÍSTICA S.A.
-
-Jefe de Seguridad
-
-Mayo de 2007 - enero de 2009
-➢ SEGURIDAD ONCOR LTDA.
-
-Jefe de Programación
-
-Marzo de 2006 - abril de 2007
-➢ VIGILANTES MARÍTIMA COMERCIAL LTDA. - VIMARCO
-
-Coordinador de Servicios / Jefe de programación
-
-Marzo de 2002 - marzo de 2006
-➢ WACKENHUT DE COLOMBIA
-
-Operador de Medios Tecnológicos
-
-Enero de 2001 - enero de 2002
-➢ ARMADA NACIONAL
-
-Electrónico Naval, Submarinista, Buzo Táctico (RADS – ARO).
-
-Enero de 1990 - enero de 2001
-Formación Profesional:
-✓ Psicólogo – Politécnico Grancolombiano
-
-✓ Especialista en Gerencia de Riesgos y Seguros – Politécnico Grancolombiano
-
-✓ Magister en Gestión de Riesgos – Universidad Católica San Antonio de Murcia - EALDE
-
-✓ Gerencia en Seguridad – Universidad Militar Nueva Granada
-
-✓ Auditor BASC – Operador Económico Autorizado (OEA)
-
-✓ Perito Marítimo – DIMAR - Armada Nacional
-
-✓ Electrónico Naval – Armada Nacional
+    <div class="grid-2-trayectoria" style="display: flex; justify-content: center;">
+        <article class="card bio-card" style="max-width: 800px; width: 100%; text-align: center;">
+            <h4 style="color: var(--azul-conservador);">Liderazgo y Experiencia Estratégica</h4>
+            <p class="excerpt">Más de 30 años liderando la seguridad en empresas nacionales y multinacionales. Psicólogo, Magíster y experto en gestión de riesgos con una formación académica de alto nivel para tomar decisiones que protegen vidas.</p>
+            <button class="btn-leer-mas" data-target="modal-trayectoria-completa">Leer más</button>
         </article>
-
     </div> 
   </section>
+
+            
 
   <section id="testimonios" class="bg-gris-suave">
     <div class="section-header">
@@ -402,10 +341,13 @@ Formación Profesional:
   </footer>
 
   <div id="modal-overlay" class="modal-overlay"></div>
+
+
+  
   
  <div id="modal-prop1" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Reconocimiento del Alto Riesgo y Dignidad</h3>
+  <h3>Reconocimiento del Alto Riesgo y Dignidad:</h3>
   <p>La profesión de seguridad privada con porte de armas de fuego debe ser legalmente clasificada como una actividad laboral de alto riesgo, sin distinción de género. Esta clasificación es un imperativo ético. Hombres y mujeres enfrentamos a diario situaciones de criminalidad y violencia que comprometen nuestra integridad y vida.</p>
   <p><strong>¡Nuestras vidas son de alto riesgo y el Estado debe reconocerlo!</strong></p>
   <p>Este reconocimiento será la base legal para impulsar mejoras concretas para el escalafón salarial para los trabajadores en Seguridad, y el pago obligatorio del 20% de la "Prima de Riesgo".</p>
@@ -415,7 +357,7 @@ Formación Profesional:
 
 <div id="modal-prop2" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Pensión Justa y Anticipada</h3>
+  <h3>Pensión Justa y Anticipada:</h3>
   <p>Aumento inmediato y significativo en las cotizaciones a pensión y riesgos laborales (ARL), garantizando que el personal de seguridad privada ingrese al Régimen Especial de Pensiones, y se pueda acceder a una jubilación justa a los 55 años con 1.300 semanas de cotización, compensando de esta forma su exposición y desgaste físico y mental.</p>
   <p>Aplica también para los trabajadores de la salud en zonas críticas por orden público, Conductores que transportan carga nacional, trabajadores minero-energéticos y operarios de maquinaria industrial de alto riesgo.</p>
   <p>Garantizando, además, protección del ahorro pensional e incentivos para cotización de independientes.</p>
@@ -424,7 +366,7 @@ Formación Profesional:
 
 <div id="modal-prop3" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Escalafón Salarial Normativo en Seguridad Privada</h3>
+  <h3>Escalafón Salarial Normativo en Seguridad Privada:</h3>
   <p>Creación de un Escalafón Salarial Normativo en Seguridad Privada, de obligatorio cumplimiento, reglamentado por la Superintendencia de Vigilancia y Seguridad Privada, con base en:</p>
   <ul>
     <li>Nivel de formación y acreditación</li>
@@ -474,7 +416,7 @@ Formación Profesional:
 
 <div id="modal-prop4" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Dignificación Laboral del Talento Humano en Salud</h3>
+  <h3>Dignificación Laboral del Talento Humano en Salud:</h3>
   <p>Profesionales de la salud: Médicos, enfermeras, auxiliares, camilleros, conductores de ambulancias de Colombia.</p>
   <p><strong>Cuidar a quienes cuidan es una obligación del Estado:</strong> En Colombia no hay sistema de salud fuerte si quienes salvan vidas trabajan sin estabilidad, con pagos tardíos y bajo agotamiento extremo.</p>
   <p>Por eso impulsaré la Ley de Dignificación Laboral del Talento Humano en Salud:</p>
@@ -493,7 +435,7 @@ Formación Profesional:
 
 <div id="modal-prop5" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Ley Hambre Cero en la Escuela</h3>
+  <h3>Ley Hambre Cero en la Escuela:</h3>
   <p><em>"En Colombia el hambre no puede seguir siendo un negocio, y los niños no pueden seguir pagando la corrupción."</em></p>
   <p>Esta iniciativa legislativa busca transformar de fondo el Plan de Alimentación Escolar (PAE) para garantizar que ningún niño o niña en Colombia estudie con hambre.</p>
   <p>La <strong>Ley Hambre Cero en la Escuela</strong> establece la obligatoriedad de dos menús diarios con igual valor nutricional, diseñados por profesionales y adaptados a las regiones, para mejorar la alimentación, reducir el desperdicio y cerrar espacios a la corrupción.</p>
@@ -504,7 +446,7 @@ Formación Profesional:
 
 <div id="modal-prop6" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Empleo Real para los Jóvenes</h3>
+  <h3>Empleo Real para los Jóvenes:</h3>
   <p>En Colombia ser joven no puede seguir siendo sinónimo de rebusque eterno.</p>
   <p><strong>Propondré:</strong></p>
   <ul>
@@ -522,7 +464,7 @@ Formación Profesional:
 
 <div id="modal-prop7" class="modal">
   <span class="close-modal">&times;</span>
-  <h3>Seguridad Vial</h3>
+  <h3>Seguridad Vial:</h3>
   <p><em>"En Colombia manejar se volvió un acto de valentía. No podemos seguir enterrando conductores mientras el Estado mira al lado."</em></p>
   <p><strong>Transportadores de carga son víctimas de:</strong></p>
   <ul>
@@ -608,6 +550,60 @@ Formación Profesional:
     <li>• <strong>Perito Marítimo</strong> - DIMAR</li>
   </ul>
 </div>
+
+
+<div id="modal-quien-es-completo" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>¿Quién es Jorge Rayo?</h3>
+    
+    <p>Jorge Rayo es un colombiano hecho a pulso. Nació en Puerto Leguízamo, Putumayo, y aprendió que la vida se defiende con trabajo, disciplina y amor por la familia. Sirvió a Colombia en la Armada Nacional como Electrónico Naval, Submarinista y Buzo Táctico, y desde el año 2001 ha dedicado su vida a cuidar y proteger a otros.</p>
+    
+    <p>Hoy lucha para que ningún hogar viva con miedo y para que la Seguridad, la Tranquilidad y la Confianza sean un derecho para todos, no un privilegio de pocos.</p>
+    
+    <h4 style="color: var(--azul-conservador); margin-top: 20px;">Compromiso social:</h4>
+    <p>Desde el año 2010 fundó y lidera la Fundación ONG Mi Pequeño Guardián, inspirado por las madres cabeza de hogar que, aun en medio de la dificultad, nunca se rinden. Mujeres que sostienen solas a sus hijos, enfrentan la inseguridad y cargan en silencio con el futuro del país.</p>
+    
+    <p>Escuchando sus historias entendió que ayudar no basta: hay que cambiar las reglas. Por ellas decidió dar el paso de aspirar al Senado de la República, convencido de que la verdadera seguridad empieza en el hogar, que la tranquilidad se construye protegiendo a quienes más aman y que Colombia solo será justa cuando el Estado cuide a quienes nunca se rinden.</p>
+    
+    <p style="font-weight: bold; color: var(--azul-conservador); margin-top: 15px;">Contigo somos más, para escribir una nueva historia para los trabajadores y sus familias.</p>
+</div>
+
+<div id="modal-trayectoria-completa" class="modal">
+    <span class="close-modal">&times;</span>
+    <h3>Trayectoria y Formación</h3>
+    
+    <div style="text-align: left;">
+        <h4 style="color: var(--azul-conservador); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px;">Experiencia Laboral</h4>
+        
+        <p><strong>CIA. MIGUEL CABALLERO</strong><br>Jefe de Seguridad<br><span style="color:#666; font-size:0.9em;">Julio 2024 – Actualmente</span></p>
+        
+        <p><strong>PVC GERFOR SAS</strong><br>Director de Seguridad<br><span style="color:#666; font-size:0.9em;">Julio 2018 – abril 2024</span></p>
+
+        <p><strong>TRANSPORTES HUMADEA SAS</strong><br>Director de análisis y seguridad<br><span style="color:#666; font-size:0.9em;">Junio de 2009 – febrero de 2018</span></p>
+
+        <p><strong>CORPORACIÓN COLOMBIANA DE LOGÍSTICA S.A.</strong><br>Jefe de Seguridad<br><span style="color:#666; font-size:0.9em;">Mayo de 2007 – enero de 2009</span></p>
+
+        <p><strong>SEGURIDAD ONCOR LTDA.</strong><br>Jefe de Programación<br><span style="color:#666; font-size:0.9em;">Marzo de 2006 – abril de 2007</span></p>
+
+        <p><strong>VIGILANTES MARÍTIMA COMERCIAL LTDA. – VIMARCO</strong><br>Coordinador de Servicios / Jefe de programación<br><span style="color:#666; font-size:0.9em;">Marzo de 2002 – marzo de 2006</span></p>
+
+        <p><strong>WACKENHUT DE COLOMBIA</strong><br>Operador de Medios Tecnológicos<br><span style="color:#666; font-size:0.9em;">Enero de 2001 – enero de 2002</span></p>
+
+        <p><strong>ARMADA NACIONAL</strong><br>Electrónico Naval, Submarinista, Buzo Táctico (RADS – ARO)<br><span style="color:#666; font-size:0.9em;">Enero 1990 – enero de 2001</span></p>
+
+        <h4 style="color: var(--azul-conservador); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 30px; margin-bottom: 15px;">Formación Profesional</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;">✓ <strong>Psicólogo</strong> – Politécnico Grancolombiano</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Especialista en Gerencia de Riesgos y Seguros</strong> – Politécnico Grancolombiano</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Magister en Gestión de Riesgos</strong> – Universidad Católica San Antonio de Murcia – EALDE</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Gerencia en Seguridad</strong> – Universidad Militar Nueva Granada</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Auditor BASC</strong> – Operador Económico Autorizado (OEA)</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Perito Marítimo</strong> – DIMAR – Armada Nacional</li>
+            <li style="margin-bottom: 8px;">✓ <strong>Electrónico Naval</strong> – Armada Nacional</li>
+        </ul>
+    </div>
+</div>
+
   <script src="script.js"></script>
 </body>
 </html>
