@@ -397,3 +397,48 @@ footer { background: #001030; color: #aaa; text-align: center; padding: 30px; }
     max-width: 600px;
   }
 }
+
+/* =========================================
+   CORRECCIÓN DE ALTURA EN TESTIMONIOS
+   ========================================= */
+
+/* 1. Asegurar altura uniforme en todas las tarjetas */
+#historias-container {
+    align-items: stretch; 
+}
+
+.testimonio-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    justify-content: space-between; 
+}
+
+/* 2. Cortar el texto visualmente a 5 líneas */
+.testimonio-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Número máximo de líneas visibles */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1; 
+    margin-bottom: 15px;
+}
+
+/* 3. Estilo del botón "Leer historia completa" */
+.btn-leer-mas-testimonio {
+    background: none;
+    border: none;
+    color: var(--azul-conservador);
+    padding: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start;
+    text-decoration: underline;
+    margin-top: auto; 
+}
+
+.btn-leer-mas-testimonio:hover {
+    color: var(--acento);
+}
