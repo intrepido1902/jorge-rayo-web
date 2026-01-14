@@ -50,61 +50,63 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('⚠️ Auditoría: No se encontró #casilla-82 o #como-votar en el DOM.');
   }
 
- // 3. Reparación Botones "Leer Más" (Modales) - VERSIÓN ROBUSTA
-  // Seleccionamos ambos tipos de botones: los de propuestas (.btn-leer-mas) y los de testimonios (.btn-leer-mas-testimonio)
+ // 3. LOGICA UNIFICADA DE MODALES (Propuestas e Historias)
+  // SELECCIONA TODO: Botones de propuestas (.btn-leer-mas) Y Botones de historias (.btn-leer-mas-testimonio)
   const btnsLeerMas = document.querySelectorAll('.btn-leer-mas, .btn-leer-mas-testimonio');
   const overlay = document.getElementById('modal-overlay');
   const closeBtns = document.querySelectorAll('.close-modal');
 
-  // Función segura para abrir con diagnósticos
+  // Función DEBUG para abrir modal
   const openModal = (modalId) => {
-    console.log(`Intentando abrir modal con ID: ${modalId}`); // LOG DEPURACIÓN
+    console.log(`[JS] Solicitud para abrir ID: ${modalId}`);
     
     if (!modalId) {
-      console.error('ERROR: El botón no tiene un atributo data-target definido.');
+      console.error('[JS ERROR] El botón no tiene atributo data-target.');
       return;
     }
 
     const modal = document.getElementById(modalId);
     
     if (modal && overlay) {
-      console.log('Modal encontrado en el DOM. Abriendo...'); // LOG DEPURACIÓN
+      console.log(`[JS] Modal encontrado: ${modalId}. Abriendo...`);
       modal.classList.add('active-modal');
       overlay.classList.add('active-modal');
-      document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+      document.body.style.overflow = 'hidden'; // Bloquear scroll
     } else {
-      console.error(`ERROR CRÍTICO: No se encontró en el HTML un elemento con id="${modalId}" o falta el overlay.`);
+      console.error(`[JS ERROR CRÍTICO] No existe el modal con id="${modalId}" en el HTML.`);
     }
   };
 
-  // Función segura para cerrar
+  // Función para cerrar
   const closeModal = () => {
-    console.log('Cerrando modales...'); // LOG DEPURACIÓN
+    console.log('[JS] Cerrando modales...');
     document.querySelectorAll('.modal.active-modal').forEach(m => m.classList.remove('active-modal'));
     if(overlay) overlay.classList.remove('active-modal');
-    document.body.style.overflow = ''; 
+    document.body.style.overflow = ''; // Restaurar scroll
   };
 
-  // Asignar eventos
-  if(btnsLeerMas.length > 0) {
-    console.log(`Se encontraron ${btnsLeerMas.length} botones de "Leer más". Asignando eventos...`); // LOG DEPURACIÓN
+  // Asignación de Eventos
+  if (btnsLeerMas.length > 0) {
+    console.log(`[JS] Se encontraron ${btnsLeerMas.length} botones activables.`);
     
     btnsLeerMas.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         const targetId = btn.getAttribute('data-target');
-        console.log('Click detectado en botón. Target:', targetId); // LOG DEPURACIÓN
+        console.log(`[JS] Clic en botón hacia: ${targetId}`);
         openModal(targetId);
       });
     });
   } else {
-    console.warn('ADVERTENCIA: No se encontraron botones con la clase .btn-leer-mas ni .btn-leer-mas-testimonio');
+    console.warn('[JS ADVERTENCIA] No se encontraron botones para asignar eventos.');
   }
 
+  // Cerrar al dar click en la X
   if(closeBtns.length > 0) {
     closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
   }
 
+  // Cerrar al dar click fuera (overlay)
   if(overlay) {
     overlay.addEventListener('click', closeModal);
   }
